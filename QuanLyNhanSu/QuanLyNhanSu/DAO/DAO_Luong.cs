@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLyNhanSu.DAO
+{
+    public class DAO_Luong
+    {
+        NhanSuEntities dbo;
+        public DAO_Luong() { 
+            dbo= new NhanSuEntities();
+        }
+    }
+}

@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BangCong">
+          <Key>
+            <PropertyRef Name="MaBangCong" />
+          </Key>
+          <Property Name="MaBangCong" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="NgayLam" Type="int" />
+          <Property Name="ThangLam" Type="int" />
+          <Property Name="NamLam" Type="int" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="SoGioTangCa" Type="int" />
+          <Property Name="MaNV" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="BangLuong">
+          <Key>
+            <PropertyRef Name="MaLuong" />
+          </Key>
+          <Property Name="MaLuong" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="LCB" Type="float" />
+          <Property Name="PCPhongBan" Type="float" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="MaNV" Type="char" MaxLength="10" />
+          <Property Name="PCChucVu" Type="float" />
+          <Property Name="SoNgayNghi" Type="int" />
+          <Property Name="SoNgayLam" Type="int" />
+          <Property Name="Thang" Type="int" />
+          <Property Name="Nam" Type="int" />
+          <Property Name="Thuong" Type="float" />
+          <Property Name="KyLuat" Type="float" />
+          <Property Name="SoGioTangCa" Type="int" />
+          <Property Name="BaoHiem" Type="float" />
+          <Property Name="LuongTotal" Type="float" />
+        </EntityType>
+        <EntityType Name="BaoHiem">
+          <Key>
+            <PropertyRef Name="MaBH" />
+          </Key>
+          <Property Name="MaBH" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaNV" Type="char" MaxLength="10" />
+          <Property Name="ThangDong" Type="int" />
+          <Property Name="NamDong" Type="int" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="TiLe" Type="float" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaBoPhan" Type="char" MaxLength="10" />
+          <Property Name="MaPhong" Type="char" MaxLength="10" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="GioiTinh" Type="bit" />
+          <Property Name="TTHonNhan" Type="bit" />
+          <Property Name="CCCD" Type="char" MaxLength="10" />
+          <Property Name="NoiCap" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoaiHD" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThoiGian" Type="int" />
+          <Property Name="NgayKy" Type="datetime" />
+          <Property Name="NgayHetHan" Type="datetime" />
+          <Property Name="SoDienThoai" Type="char" MaxLength="10" />
+          <Property Name="MaPhieuThaiSan" Type="char" MaxLength="10" />
+          <Property Name="username" Type="char" MaxLength="10" />
+          <Property Name="password" Type="char" MaxLength="15" />
+          <Property Name="role" Type="bit" />
+          <Property Name="active" Type="bit" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PhongBan">
+          <Key>
+            <PropertyRef Name="MaPhongBan" />
+          </Key>
+          <Property Name="MaPhongBan" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TenPhongBan" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayThanhLap" Type="datetime" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="MaBoPhan" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TangLuong">
+          <Key>
+            <PropertyRef Name="MaPhieu" />
+          </Key>
+          <Property Name="MaPhieu" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MaNV" Type="char" MaxLength="10" />
+          <Property Name="LCB" Type="float" />
+          <Property Name="LCBMoi" Type="float" />
+          <Property Name="NgaySua" Type="datetime" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_BangCong_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="BangCong" Type="Self.BangCong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="BangCong">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BangLuong_NhanVien1">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="BangLuong" Type="Self.BangLuong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="BangLuong">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaoHiem_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="BaoHiem" Type="Self.BaoHiem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="BaoHiem">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_PhongBan">
+          <End Role="PhongBan" Type="Self.PhongBan" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongBan">
+              <PropertyRef Name="MaPhongBan" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaPhong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TangLuong_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="TangLuong" Type="Self.TangLuong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="TangLuong">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="proc_logic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="nchar" Mode="In" />
+          <Parameter Name="pass" Type="nchar" Mode="In" />
+          <Parameter Name="role" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="proc_login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="nchar" Mode="In" />
+          <Parameter Name="pass" Type="nchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="NhanSuModelStoreContainer">
+          <EntitySet Name="BangCong" EntityType="Self.BangCong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BangLuong" EntityType="Self.BangLuong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaoHiem" EntityType="Self.BaoHiem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhongBan" EntityType="Self.PhongBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TangLuong" EntityType="Self.TangLuong" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BangCong_NhanVien" Association="Self.FK_BangCong_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BangCong" EntitySet="BangCong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BangLuong_NhanVien1" Association="Self.FK_BangLuong_NhanVien1">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BangLuong" EntitySet="BangLuong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaoHiem_NhanVien" Association="Self.FK_BaoHiem_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BaoHiem" EntitySet="BaoHiem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_PhongBan" Association="Self.FK_NhanVien_PhongBan">
+            <End Role="PhongBan" EntitySet="PhongBan" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TangLuong_NhanVien" Association="Self.FK_TangLuong_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="TangLuong" EntitySet="TangLuong" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NhanSuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BangCong">
+          <Key>
+            <PropertyRef Name="MaBangCong" />
+          </Key>
+          <Property Name="MaBangCong" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayLam" Type="Int32" />
+          <Property Name="ThangLam" Type="Int32" />
+          <Property Name="NamLam" Type="Int32" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="SoGioTangCa" Type="Int32" />
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangCong_NhanVien" FromRole="BangCong" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="BangLuong">
+          <Key>
+            <PropertyRef Name="MaLuong" />
+          </Key>
+          <Property Name="MaLuong" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LCB" Type="Double" />
+          <Property Name="PCPhongBan" Type="Double" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="PCChucVu" Type="Double" />
+          <Property Name="SoNgayNghi" Type="Int32" />
+          <Property Name="SoNgayLam" Type="Int32" />
+          <Property Name="Thang" Type="Int32" />
+          <Property Name="Nam" Type="Int32" />
+          <Property Name="Thuong" Type="Double" />
+          <Property Name="KyLuat" Type="Double" />
+          <Property Name="SoGioTangCa" Type="Int32" />
+          <Property Name="BaoHiem" Type="Double" />
+          <Property Name="LuongTotal" Type="Double" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="BaoHiem">
+          <Key>
+            <PropertyRef Name="MaBH" />
+          </Key>
+          <Property Name="MaBH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ThangDong" Type="Int32" />
+          <Property Name="NamDong" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TiLe" Type="Double" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="BaoHiem" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaBoPhan" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MaPhong" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="GioiTinh" Type="Boolean" />
+          <Property Name="TTHonNhan" Type="Boolean" />
+          <Property Name="CCCD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NoiCap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGian" Type="Int32" />
+          <Property Name="NgayKy" Type="DateTime" Precision="3" />
+          <Property Name="NgayHetHan" Type="DateTime" Precision="3" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MaPhieuThaiSan" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="role" Type="Boolean" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BangCong" Relationship="Self.FK_BangCong_NhanVien" FromRole="NhanVien" ToRole="BangCong" />
+          <NavigationProperty Name="BangLuong" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="NhanVien" ToRole="BangLuong" />
+          <NavigationProperty Name="BaoHiem" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="NhanVien" ToRole="BaoHiem" />
+          <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan" FromRole="NhanVien" ToRole="PhongBan" />
+          <NavigationProperty Name="TangLuong" Relationship="Self.FK_TangLuong_NhanVien" FromRole="NhanVien" ToRole="TangLuong" />
+        </EntityType>
+        <EntityType Name="PhongBan">
+          <Key>
+            <PropertyRef Name="MaPhongBan" />
+          </Key>
+          <Property Name="MaPhongBan" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenPhongBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayThanhLap" Type="DateTime" Precision="3" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaBoPhan" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanVien_PhongBan" FromRole="PhongBan" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="TangLuong">
+          <Key>
+            <PropertyRef Name="MaPhieu" />
+          </Key>
+          <Property Name="MaPhieu" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="LCB" Type="Double" />
+          <Property Name="LCBMoi" Type="Double" />
+          <Property Name="NgaySua" Type="DateTime" Precision="3" />
+          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_TangLuong_NhanVien" FromRole="TangLuong" ToRole="NhanVien" />
+        </EntityType>
+        <Association Name="FK_BangCong_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="BangCong" Type="Self.BangCong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="BangCong">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BangLuong_NhanVien1">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="BangLuong" Type="Self.BangLuong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="BangLuong">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaoHiem_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="BaoHiem" Type="Self.BaoHiem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="BaoHiem">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_PhongBan">
+          <End Role="PhongBan" Type="Self.PhongBan" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongBan">
+              <PropertyRef Name="MaPhongBan" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaPhong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TangLuong_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+          <End Role="TangLuong" Type="Self.TangLuong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="TangLuong">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NhanSuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BangCong" EntityType="Self.BangCong" />
+          <EntitySet Name="BangLuong" EntityType="Self.BangLuong" />
+          <EntitySet Name="BaoHiem" EntityType="Self.BaoHiem" />
+          <EntitySet Name="NhanVien" EntityType="Self.NhanVien" />
+          <EntitySet Name="PhongBan" EntityType="Self.PhongBan" />
+          <EntitySet Name="TangLuong" EntityType="Self.TangLuong" />
+          <AssociationSet Name="FK_BangCong_NhanVien" Association="Self.FK_BangCong_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BangCong" EntitySet="BangCong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BangLuong_NhanVien1" Association="Self.FK_BangLuong_NhanVien1">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BangLuong" EntitySet="BangLuong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaoHiem_NhanVien" Association="Self.FK_BaoHiem_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BaoHiem" EntitySet="BaoHiem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_PhongBan" Association="Self.FK_NhanVien_PhongBan">
+            <End Role="PhongBan" EntitySet="PhongBan" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TangLuong_NhanVien" Association="Self.FK_TangLuong_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="TangLuong" EntitySet="TangLuong" />
+          </AssociationSet>
+          <FunctionImport Name="proc_logic" ReturnType="Collection(NhanSuModel.proc_logic_Result)">
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+            <Parameter Name="role" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="proc_login" ReturnType="Collection(NhanSuModel.proc_login_Result)">
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="proc_logic_Result">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="HoTen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaBoPhan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MaPhong" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="NgaySinh" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
+          <Property Type="Boolean" Name="TTHonNhan" Nullable="true" />
+          <Property Type="String" Name="CCCD" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NoiCap" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ChucVu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoaiHD" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ThoiGian" Nullable="true" />
+          <Property Type="DateTime" Name="NgayKy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="NgayHetHan" Nullable="true" Precision="23" />
+          <Property Type="String" Name="SoDienThoai" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MaPhieuThaiSan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="password" Nullable="true" MaxLength="15" />
+          <Property Type="Boolean" Name="role" Nullable="true" />
+          <Property Type="Boolean" Name="active" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="proc_login_Result">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="HoTen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaBoPhan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MaPhong" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="NgaySinh" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
+          <Property Type="Boolean" Name="TTHonNhan" Nullable="true" />
+          <Property Type="String" Name="CCCD" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="NoiCap" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ChucVu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoaiHD" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ThoiGian" Nullable="true" />
+          <Property Type="DateTime" Name="NgayKy" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="NgayHetHan" Nullable="true" Precision="23" />
+          <Property Type="String" Name="SoDienThoai" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MaPhieuThaiSan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="password" Nullable="true" MaxLength="15" />
+          <Property Type="Boolean" Name="role" Nullable="true" />
+          <Property Type="Boolean" Name="active" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities">
+          <EntitySetMapping Name="BangCong">
+            <EntityTypeMapping TypeName="NhanSuModel.BangCong">
+              <MappingFragment StoreEntitySet="BangCong">
+                <ScalarProperty Name="MaBangCong" ColumnName="MaBangCong" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="NgayLam" ColumnName="NgayLam" />
+                <ScalarProperty Name="ThangLam" ColumnName="ThangLam" />
+                <ScalarProperty Name="NamLam" ColumnName="NamLam" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BangLuong">
+            <EntityTypeMapping TypeName="NhanSuModel.BangLuong">
+              <MappingFragment StoreEntitySet="BangLuong">
+                <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
+                <ScalarProperty Name="PCPhongBan" ColumnName="PCPhongBan" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="PCChucVu" ColumnName="PCChucVu" />
+                <ScalarProperty Name="SoNgayNghi" ColumnName="SoNgayNghi" />
+                <ScalarProperty Name="SoNgayLam" ColumnName="SoNgayLam" />
+                <ScalarProperty Name="Thang" ColumnName="Thang" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="Thuong" ColumnName="Thuong" />
+                <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
+                <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
+                <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
+                <ScalarProperty Name="LuongTotal" ColumnName="LuongTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaoHiem">
+            <EntityTypeMapping TypeName="NhanSuModel.BaoHiem">
+              <MappingFragment StoreEntitySet="BaoHiem">
+                <ScalarProperty Name="MaBH" ColumnName="MaBH" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="ThangDong" ColumnName="ThangDong" />
+                <ScalarProperty Name="NamDong" ColumnName="NamDong" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TiLe" ColumnName="TiLe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanVien">
+            <EntityTypeMapping TypeName="NhanSuModel.NhanVien">
+              <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+                <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="MaPhieuThaiSan" ColumnName="MaPhieuThaiSan" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhongBan">
+            <EntityTypeMapping TypeName="NhanSuModel.PhongBan">
+              <MappingFragment StoreEntitySet="PhongBan">
+                <ScalarProperty Name="MaPhongBan" ColumnName="MaPhongBan" />
+                <ScalarProperty Name="TenPhongBan" ColumnName="TenPhongBan" />
+                <ScalarProperty Name="NgayThanhLap" ColumnName="NgayThanhLap" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TangLuong">
+            <EntityTypeMapping TypeName="NhanSuModel.TangLuong">
+              <MappingFragment StoreEntitySet="TangLuong">
+                <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
+                <ScalarProperty Name="LCBMoi" ColumnName="LCBMoi" />
+                <ScalarProperty Name="NgaySua" ColumnName="NgaySua" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="proc_logic" FunctionName="NhanSuModel.Store.proc_logic">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NhanSuModel.proc_logic_Result">
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+                <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="MaPhieuThaiSan" ColumnName="MaPhieuThaiSan" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_login" FunctionName="NhanSuModel.Store.proc_login">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NhanSuModel.proc_login_Result">
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+                <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+                <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="MaPhieuThaiSan" ColumnName="MaPhieuThaiSan" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
