@@ -17,7 +17,7 @@ namespace QuanLyNhanSu
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhongBan()
         {
-            this.NhanVien = new HashSet<NhanVien>();
+            this.NhanViens = new HashSet<NhanVien>();
         }
     
         public string MaPhongBan { get; set; }
@@ -27,6 +27,6 @@ namespace QuanLyNhanSu
         public string MaBoPhan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhanVien> NhanVien { get; set; }
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

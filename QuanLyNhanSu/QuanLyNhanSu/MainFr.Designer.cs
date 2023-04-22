@@ -144,6 +144,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1411, 65);
             this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lb_option
             // 
@@ -153,7 +154,7 @@
             this.lb_option.Location = new System.Drawing.Point(529, 9);
             this.lb_option.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_option.Name = "lb_option";
-            this.lb_option.Size = new System.Drawing.Size(112, 36);
+            this.lb_option.Size = new System.Drawing.Size(89, 29);
             this.lb_option.TabIndex = 0;
             this.lb_option.Text = "ADMIN";
             // 

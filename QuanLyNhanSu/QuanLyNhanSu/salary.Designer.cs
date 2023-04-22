@@ -32,7 +32,7 @@
             this.panel_ThongTin = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dGLuong = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.panel_ThongTin.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGLuong)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -95,12 +95,12 @@
             // 
             this.panel_ThongTin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel_ThongTin.Controls.Add(this.tabControl2);
-            this.panel_ThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_ThongTin.Location = new System.Drawing.Point(0, 0);
+            this.panel_ThongTin.Location = new System.Drawing.Point(14, 37);
             this.panel_ThongTin.Margin = new System.Windows.Forms.Padding(5);
             this.panel_ThongTin.Name = "panel_ThongTin";
             this.panel_ThongTin.Size = new System.Drawing.Size(1143, 702);
             this.panel_ThongTin.TabIndex = 3;
+            this.panel_ThongTin.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_ThongTin_Paint);
             // 
             // tabControl2
             // 
@@ -118,26 +118,26 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.dGLuong);
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(958, 535);
+            this.tabPage3.Size = new System.Drawing.Size(958, 537);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Lương công ty";
             // 
-            // dataGridView2
+            // dGLuong
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 249);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(951, 286);
-            this.dataGridView2.TabIndex = 0;
+            this.dGLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGLuong.Location = new System.Drawing.Point(4, 249);
+            this.dGLuong.Margin = new System.Windows.Forms.Padding(4);
+            this.dGLuong.Name = "dGLuong";
+            this.dGLuong.RowHeadersWidth = 51;
+            this.dGLuong.Size = new System.Drawing.Size(951, 286);
+            this.dGLuong.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -268,7 +268,7 @@
             this.dateTimePicker4.Location = new System.Drawing.Point(577, 113);
             this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(124, 25);
+            this.dateTimePicker4.Size = new System.Drawing.Size(124, 21);
             this.dateTimePicker4.TabIndex = 10;
             // 
             // dateTimePicker5
@@ -277,7 +277,7 @@
             this.dateTimePicker5.Location = new System.Drawing.Point(343, 113);
             this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(132, 25);
+            this.dateTimePicker5.Size = new System.Drawing.Size(132, 21);
             this.dateTimePicker5.TabIndex = 7;
             // 
             // dateTimePicker7
@@ -286,7 +286,7 @@
             this.dateTimePicker7.Location = new System.Drawing.Point(343, 36);
             this.dateTimePicker7.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(132, 25);
+            this.dateTimePicker7.Size = new System.Drawing.Size(132, 21);
             this.dateTimePicker7.TabIndex = 4;
             // 
             // textBox2
@@ -294,7 +294,7 @@
             this.textBox2.Location = new System.Drawing.Point(793, 113);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 25);
+            this.textBox2.Size = new System.Drawing.Size(143, 21);
             this.textBox2.TabIndex = 11;
             // 
             // textBox3
@@ -302,7 +302,7 @@
             this.textBox3.Location = new System.Drawing.Point(96, 71);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 25);
+            this.textBox3.Size = new System.Drawing.Size(127, 21);
             this.textBox3.TabIndex = 2;
             // 
             // textBox4
@@ -310,7 +310,7 @@
             this.textBox4.Location = new System.Drawing.Point(343, 76);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 25);
+            this.textBox4.Size = new System.Drawing.Size(132, 21);
             this.textBox4.TabIndex = 6;
             // 
             // textBox5
@@ -318,7 +318,7 @@
             this.textBox5.Location = new System.Drawing.Point(577, 50);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 25);
+            this.textBox5.Size = new System.Drawing.Size(124, 21);
             this.textBox5.TabIndex = 9;
             // 
             // textBox6
@@ -326,7 +326,7 @@
             this.textBox6.Location = new System.Drawing.Point(793, 50);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(143, 25);
+            this.textBox6.Size = new System.Drawing.Size(143, 21);
             this.textBox6.TabIndex = 12;
             // 
             // textBox7
@@ -334,7 +334,7 @@
             this.textBox7.Location = new System.Drawing.Point(96, 117);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(127, 25);
+            this.textBox7.Size = new System.Drawing.Size(127, 21);
             this.textBox7.TabIndex = 3;
             // 
             // textBox8
@@ -342,7 +342,7 @@
             this.textBox8.Location = new System.Drawing.Point(96, 32);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(127, 25);
+            this.textBox8.Size = new System.Drawing.Size(127, 21);
             this.textBox8.TabIndex = 1;
             // 
             // label2
@@ -351,7 +351,7 @@
             this.label2.Location = new System.Drawing.Point(725, 117);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ghi chú";
             // 
@@ -361,7 +361,7 @@
             this.label3.Location = new System.Drawing.Point(245, 121);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(53, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Ngày sửa";
             // 
@@ -371,7 +371,7 @@
             this.label13.Location = new System.Drawing.Point(-1, 75);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 17);
+            this.label13.Size = new System.Drawing.Size(72, 15);
             this.label13.TabIndex = 0;
             this.label13.Text = "Lương cơ bản";
             // 
@@ -381,7 +381,7 @@
             this.label14.Location = new System.Drawing.Point(484, 117);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 17);
+            this.label14.Size = new System.Drawing.Size(66, 15);
             this.label14.TabIndex = 0;
             this.label14.Text = "Ngày sử PC";
             // 
@@ -391,7 +391,7 @@
             this.label22.Location = new System.Drawing.Point(236, 79);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(97, 17);
+            this.label22.Size = new System.Drawing.Size(78, 15);
             this.label22.TabIndex = 0;
             this.label22.Text = "Lương CB mới";
             // 
@@ -401,7 +401,7 @@
             this.label23.Location = new System.Drawing.Point(484, 54);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(85, 17);
+            this.label23.Size = new System.Drawing.Size(68, 15);
             this.label23.TabIndex = 0;
             this.label23.Text = "PC CVụ mới";
             // 
@@ -411,7 +411,7 @@
             this.label25.Location = new System.Drawing.Point(236, 42);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 17);
+            this.label25.Size = new System.Drawing.Size(60, 15);
             this.label25.TabIndex = 0;
             this.label25.Text = "Ngày nhập";
             // 
@@ -421,7 +421,7 @@
             this.label26.Location = new System.Drawing.Point(737, 58);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(42, 17);
+            this.label26.Size = new System.Drawing.Size(36, 15);
             this.label26.TabIndex = 0;
             this.label26.Text = "Lý do";
             // 
@@ -431,7 +431,7 @@
             this.label27.Location = new System.Drawing.Point(4, 117);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(78, 17);
+            this.label27.Size = new System.Drawing.Size(63, 15);
             this.label27.TabIndex = 0;
             this.label27.Text = "PC chức vụ";
             // 
@@ -441,7 +441,7 @@
             this.label28.Location = new System.Drawing.Point(16, 36);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(65, 17);
+            this.label28.Size = new System.Drawing.Size(54, 15);
             this.label28.TabIndex = 0;
             this.label28.Text = "Mã lương";
             // 
@@ -450,11 +450,11 @@
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.groupBox7);
             this.tabPage4.Controls.Add(this.groupBox8);
-            this.tabPage4.Location = new System.Drawing.Point(4, 26);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(1006, 535);
+            this.tabPage4.Size = new System.Drawing.Size(958, 537);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Vấn đề tăng lương";
             // 
@@ -580,7 +580,7 @@
             this.textBox9.Location = new System.Drawing.Point(120, 108);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(147, 25);
+            this.textBox9.Size = new System.Drawing.Size(147, 21);
             this.textBox9.TabIndex = 12;
             // 
             // comboBox2
@@ -590,7 +590,7 @@
             this.comboBox2.Location = new System.Drawing.Point(123, 36);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(116, 25);
+            this.comboBox2.Size = new System.Drawing.Size(116, 23);
             this.comboBox2.TabIndex = 11;
             // 
             // dateTimePicker8
@@ -599,7 +599,7 @@
             this.dateTimePicker8.Location = new System.Drawing.Point(382, 76);
             this.dateTimePicker8.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(121, 25);
+            this.dateTimePicker8.Size = new System.Drawing.Size(121, 21);
             this.dateTimePicker8.TabIndex = 9;
             // 
             // textBox10
@@ -607,7 +607,7 @@
             this.textBox10.Location = new System.Drawing.Point(119, 72);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(148, 25);
+            this.textBox10.Size = new System.Drawing.Size(148, 21);
             this.textBox10.TabIndex = 3;
             // 
             // textBox11
@@ -615,7 +615,7 @@
             this.textBox11.Location = new System.Drawing.Point(375, 34);
             this.textBox11.Margin = new System.Windows.Forms.Padding(4);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(148, 25);
+            this.textBox11.Size = new System.Drawing.Size(148, 21);
             this.textBox11.TabIndex = 6;
             // 
             // textBox13
@@ -623,7 +623,7 @@
             this.textBox13.Location = new System.Drawing.Point(365, 105);
             this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(295, 25);
+            this.textBox13.Size = new System.Drawing.Size(295, 21);
             this.textBox13.TabIndex = 10;
             // 
             // label29
@@ -632,7 +632,7 @@
             this.label29.Location = new System.Drawing.Point(47, 76);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(58, 17);
+            this.label29.Size = new System.Drawing.Size(48, 15);
             this.label29.TabIndex = 0;
             this.label29.Text = "Chức vụ";
             // 
@@ -642,7 +642,7 @@
             this.label30.Location = new System.Drawing.Point(299, 108);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(38, 17);
+            this.label30.Size = new System.Drawing.Size(32, 15);
             this.label30.TabIndex = 0;
             this.label30.Text = "Lí do";
             // 
@@ -652,7 +652,7 @@
             this.label31.Location = new System.Drawing.Point(271, 39);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(97, 17);
+            this.label31.Size = new System.Drawing.Size(79, 15);
             this.label31.TabIndex = 0;
             this.label31.Text = "Mã Lương mới";
             // 
@@ -662,7 +662,7 @@
             this.label33.Location = new System.Drawing.Point(299, 72);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(69, 17);
+            this.label33.Size = new System.Drawing.Size(56, 15);
             this.label33.TabIndex = 0;
             this.label33.Text = "Ngày tăng";
             // 
@@ -672,7 +672,7 @@
             this.label34.Location = new System.Drawing.Point(15, 115);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(89, 17);
+            this.label34.Size = new System.Drawing.Size(72, 15);
             this.label34.TabIndex = 0;
             this.label34.Text = "Mã Lương cũ";
             // 
@@ -682,7 +682,7 @@
             this.label36.Location = new System.Drawing.Point(17, 39);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(88, 17);
+            this.label36.Size = new System.Drawing.Size(73, 15);
             this.label36.TabIndex = 0;
             this.label36.Text = "Mã nhân viên";
             // 
@@ -695,10 +695,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "salary";
             this.Text = "salary";
+            this.Load += new System.EventHandler(this.salary_Load);
             this.panel_ThongTin.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGLuong)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -716,7 +717,7 @@
         private System.Windows.Forms.Panel panel_ThongTin;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dGLuong;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button11;
