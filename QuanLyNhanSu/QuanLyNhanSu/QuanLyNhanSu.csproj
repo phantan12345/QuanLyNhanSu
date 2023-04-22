@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2824CFED-72A3-48E3-A5B9-34973A240FA4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyNhanSu</RootNamespace>
+    <AssemblyName>QuanLyNhanSu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department.Designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFr.Designer.cs">
+      <DependentUpon>MainFr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regime.Designer.cs">
+      <DependentUpon>regime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salary.Designer.cs">
+      <DependentUpon>salary.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Department.resx">
+      <DependentUpon>Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFr.resx">
+      <DependentUpon>MainFr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="regime.resx">
+      <DependentUpon>regime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salary.resx">
+      <DependentUpon>salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BUS\" />
+    <Folder Include="DAO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\295128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\1269448502_administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\1269515091_keepassx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\1269825271_system-help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\1270361629_administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\afsadfdafdfaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\anh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\BAOCAO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\BCnhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\btuufon112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\butbut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button1.Image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button2.Image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button2.Image1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button3.Image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button3.Image1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button5.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button6.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button7.Image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\button8.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\capnhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ccc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Changepass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\che.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\chechunag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Chucvu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\DanToc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Danh_muc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\edit_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\eee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\exiit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\hinh-nen-win-8-full-hd-dep-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\hoadon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\hpodong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\hr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon0019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon029.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon0119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon01191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\KhenThuong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\lgin copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\maximize1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\minimize1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\nen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\nen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\phongban.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\QLNhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\remove_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\TC_nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\tim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\timkiem.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\TinhLuong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Tongiao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ThaiSan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\untitled.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\www.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\xanh.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
