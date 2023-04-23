@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyNhanSu.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace QuanLyNhanSu
 {
     public partial class salary : Form
     {
+        BUS_Luong busluong;
         public salary()
         {
             InitializeComponent();
+            busluong = new BUS_Luong();
+        }
+        private void HienThiDSNV()
+        {
+            gvLuong.DataSource = null;
+            busluong.LayDSL(gvLuong);
+
+        }
+        private void FormLoad(object sender, EventArgs e)
+        {
+            HienThiDSNV();
+        }
+
+        private void txtTim_Click(object sender, EventArgs e)
+        {
+            busluong.TimL(gvLuong,txtMa.Text,txtThang.Text,txtNam.Text);
         }
     }
 }

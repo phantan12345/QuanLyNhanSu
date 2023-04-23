@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities">
+    <EntitySetMapping Name="BangCongs">
+      <EntityTypeMapping TypeName="NhanSuModel.BangCong">
+        <MappingFragment StoreEntitySet="BangCong">
+          <ScalarProperty Name="MaBangCong" ColumnName="MaBangCong" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="NgayLam" ColumnName="NgayLam" />
+          <ScalarProperty Name="ThangLam" ColumnName="ThangLam" />
+          <ScalarProperty Name="NamLam" ColumnName="NamLam" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BangLuongs">
+      <EntityTypeMapping TypeName="NhanSuModel.BangLuong">
+        <MappingFragment StoreEntitySet="BangLuong">
+          <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
+          <ScalarProperty Name="PCPhongBan" ColumnName="PCPhongBan" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="PCChucVu" ColumnName="PCChucVu" />
+          <ScalarProperty Name="SoNgayNghi" ColumnName="SoNgayNghi" />
+          <ScalarProperty Name="SoNgayLam" ColumnName="SoNgayLam" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+          <ScalarProperty Name="Thuong" ColumnName="Thuong" />
+          <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
+          <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
+          <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
+          <ScalarProperty Name="LuongTotal" ColumnName="LuongTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaoHiems">
+      <EntityTypeMapping TypeName="NhanSuModel.BaoHiem">
+        <MappingFragment StoreEntitySet="BaoHiem">
+          <ScalarProperty Name="MaBH" ColumnName="MaBH" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="ThangDong" ColumnName="ThangDong" />
+          <ScalarProperty Name="NamDong" ColumnName="NamDong" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="TiLe" ColumnName="TiLe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="NhanSuModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
+          <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="MaPhieuThaiSan" ColumnName="MaPhieuThaiSan" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhongBans">
+      <EntityTypeMapping TypeName="NhanSuModel.PhongBan">
+        <MappingFragment StoreEntitySet="PhongBan">
+          <ScalarProperty Name="MaPhongBan" ColumnName="MaPhongBan" />
+          <ScalarProperty Name="TenPhongBan" ColumnName="TenPhongBan" />
+          <ScalarProperty Name="NgayThanhLap" ColumnName="NgayThanhLap" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TangLuongs">
+      <EntityTypeMapping TypeName="NhanSuModel.TangLuong">
+        <MappingFragment StoreEntitySet="TangLuong">
+          <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
+          <ScalarProperty Name="LCBMoi" ColumnName="LCBMoi" />
+          <ScalarProperty Name="NgaySua" ColumnName="NgaySua" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_logic" FunctionName="NhanSuModel.Store.proc_logic">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NhanSuModel.proc_logic_Result">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
+          <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="MaPhieuThaiSan" ColumnName="MaPhieuThaiSan" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_login" FunctionName="NhanSuModel.Store.proc_login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NhanSuModel.proc_login_Result">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
+          <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="MaPhieuThaiSan" ColumnName="MaPhieuThaiSan" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

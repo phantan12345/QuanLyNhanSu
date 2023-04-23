@@ -18,10 +18,9 @@ namespace QuanLyNhanSu
         public string MaBoPhan { get; set; }
         public string MaPhong { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
+        public string GioiTinh { get; set; }
         public Nullable<bool> TTHonNhan { get; set; }
         public string CCCD { get; set; }
-        public string NoiCap { get; set; }
         public string ChucVu { get; set; }
         public string LoaiHD { get; set; }
         public Nullable<int> ThoiGian { get; set; }
@@ -34,5 +33,8 @@ namespace QuanLyNhanSu
         public Nullable<bool> role { get; set; }
         public Nullable<bool> active { get; set; }
         public string email { get; set; }
+        public string NoiSinh { get; set; }
+        public int NewID { get; set; }
+        public string HocVan { get; set; }
     }
 }

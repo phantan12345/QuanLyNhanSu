@@ -15,8 +15,19 @@ namespace QuanLyNhanSu
         public MainFr()
         {
             InitializeComponent();
+            btn_ttcn_Click();
         }
 
+        private void btn_ttcn_Click()
+        {
+            Employee em = new Employee();
+            panel_Show.Show();
+            panel_Show.Controls.Clear();
+            em.TopLevel = false;
+            em.Dock = DockStyle.Fill;
+            panel_Show.Controls.Add(em);
+            em.Show();
+        }
         private void btn_ttcn_Click(object sender, EventArgs e)
         {
             Employee em = new Employee();
