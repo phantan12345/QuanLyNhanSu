@@ -119,7 +119,7 @@
             this.btn_ttcn.Name = "btn_ttcn";
             this.btn_ttcn.Size = new System.Drawing.Size(243, 77);
             this.btn_ttcn.TabIndex = 1;
-            this.btn_ttcn.Text = "Thông tin cá nhân";
+            this.btn_ttcn.Text = "Thông tin nhân viên";
             this.btn_ttcn.UseVisualStyleBackColor = true;
             this.btn_ttcn.Click += new System.EventHandler(this.btn_ttcn_Click);
             // 
@@ -144,17 +144,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1411, 65);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lb_option
             // 
             this.lb_option.AutoSize = true;
             this.lb_option.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_option.ForeColor = System.Drawing.Color.Black;
-            this.lb_option.Location = new System.Drawing.Point(529, 9);
+            this.lb_option.Location = new System.Drawing.Point(681, 9);
             this.lb_option.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_option.Name = "lb_option";
-            this.lb_option.Size = new System.Drawing.Size(89, 29);
+            this.lb_option.Size = new System.Drawing.Size(112, 36);
             this.lb_option.TabIndex = 0;
             this.lb_option.Text = "ADMIN";
             // 
