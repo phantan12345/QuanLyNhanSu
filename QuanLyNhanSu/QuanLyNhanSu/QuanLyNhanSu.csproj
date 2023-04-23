@@ -64,32 +64,16 @@
     <Compile Include="BaoHiem.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="BUS\BUS_DepartmentUser.cs" />
-    <Compile Include="BUS\BUS_InsuranceUser.cs" />
-    <Compile Include="BUS\BUS_LoginUser.cs" />
     <Compile Include="BUS\BUS_Luong.cs" />
-    <Compile Include="BUS\BUS_NhanVienUser.cs" />
-    <Compile Include="BUS\BUS_SalaryUser.cs" />
-    <Compile Include="BUS\BUS_UpdateSalary.cs" />
-    <Compile Include="DAO\DAO_DepartmentUser.cs" />
-    <Compile Include="DAO\DAO_InsuranceUser.cs" />
-    <Compile Include="DAO\DAO_LoginUser.cs" />
+    <Compile Include="BUS\BUS_PhongBan.cs" />
     <Compile Include="DAO\DAO_Luong.cs" />
     <Compile Include="DAO\DAO_NhanVien.cs" />
-    <Compile Include="DAO\DAO_NhanVienUser.cs" />
-    <Compile Include="DAO\DAO_SalaryUser.cs" />
-    <Compile Include="DAO\DAO_UpdateSalary.cs" />
+    <Compile Include="DAO\DAO_PhongBan.cs" />
     <Compile Include="Department.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Department.Designer.cs">
       <DependentUpon>Department.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DepartmentUser.Designer.cs">
-      <DependentUpon>DepartmentUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
@@ -97,35 +81,11 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="InsuranceUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsuranceUser.Designer.cs">
-      <DependentUpon>InsuranceUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginUser.Designer.cs">
-      <DependentUpon>LoginUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SalaryUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalaryUser.Designer.cs">
-      <DependentUpon>SalaryUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainFr.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFr.Designer.cs">
       <DependentUpon>MainFr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainUser.designer.cs">
-      <DependentUpon>MainUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -174,44 +134,17 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="TangLuong.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TtcnUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TtcnUser.designer.cs">
-      <DependentUpon>TtcnUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateSalaryUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateSalaryUser.Designer.cs">
-      <DependentUpon>UpdateSalaryUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Department.resx">
       <DependentUpon>Department.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentUser.resx">
-      <DependentUpon>DepartmentUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InsuranceUser.resx">
-      <DependentUpon>InsuranceUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginUser.resx">
-      <DependentUpon>LoginUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainFr.resx">
       <DependentUpon>MainFr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainUser.resx">
-      <DependentUpon>MainUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -228,15 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="salary.resx">
       <DependentUpon>salary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalaryUser.resx">
-      <DependentUpon>SalaryUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TtcnUser.resx">
-      <DependentUpon>TtcnUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateSalaryUser.resx">
-      <DependentUpon>UpdateSalaryUser.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -259,7 +183,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\1.png" />
   </ItemGroup>
@@ -475,19 +410,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
-    <None Include="Resources\hr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
