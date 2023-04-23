@@ -15,9 +15,9 @@ namespace QuanLyNhanSu
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class NhanSuEntities1 : DbContext
+    public partial class NhanSuEntities : DbContext
     {
-        public NhanSuEntities1()
+        public NhanSuEntities()
             : base("name=NhanSuEntities1")
         {
         }
@@ -27,13 +27,12 @@ namespace QuanLyNhanSu
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BangCong> BangCongs { get; set; }
-        public virtual DbSet<BangLuong> BangLuongs { get; set; }
-        public virtual DbSet<BaoHiem> BaoHiems { get; set; }
-        public virtual DbSet<NhanVien> NhanViens { get; set; }
-        public virtual DbSet<PhongBan> PhongBans { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TangLuong> TangLuongs { get; set; }
+        public virtual DbSet<BangCong> BangCong { get; set; }
+        public virtual DbSet<BangLuong> BangLuong { get; set; }
+        public virtual DbSet<BaoHiem> BaoHiem { get; set; }
+        public virtual DbSet<NhanVien> NhanVien { get; set; }
+        public virtual DbSet<PhongBan> PhongBan { get; set; }
+        public virtual DbSet<TangLuong> TangLuong { get; set; }
     
         public virtual ObjectResult<proc_logic_Result> proc_logic(string user, string pass, Nullable<bool> role)
         {
