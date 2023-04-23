@@ -8,14 +8,17 @@ namespace QuanLyNhanSu.DAO
 {
     public class DAO_Luong
     {
-        NhanSuEntities dbo;
-        public DAO_Luong() { 
-            dbo= new NhanSuEntities();
+        NhanSuEntities1 dbo;
+        public DAO_Luong() 
+        { 
+            dbo = new NhanSuEntities1();
+           
         }
         public dynamic getLuong()
         {
-            var ds = dbo.BangLuong.Select(s => new
+            var ds = dbo.BangLuongs.Select(s => new
             {
+                s.MaNV,
                 s.PCChucVu,
                 s.PCPhongBan,
                 s.SoNgayLam,
@@ -28,12 +31,6 @@ namespace QuanLyNhanSu.DAO
                 s.LuongTotal
             }).ToList();
             return ds;
-        }
-
-        public void addLuong(BangLuong bl)
-        {
-            dbo.BangLuong.Add(bl);
-            dbo.SaveChanges();
         }
     }
 }
