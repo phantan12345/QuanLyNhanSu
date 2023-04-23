@@ -26,9 +26,9 @@ namespace GUI
             user = new BUS_NhanVienUser();
         }
 
-        public TtcnUser(string nv) : this()
+        public TtcnUser(NhanVien nv) : this()
         {
-            user.getUser(lb_user, lb_name, lb_email, lb_manv, lb_ngaysinh, lb_cccd, lb_sdt, lb_pb, lb_cv, lb_hopdong, pb_imgnv, nv);
+            user.getUser(lb_user, lb_name, lb_email, lb_manv, lb_ngaysinh, lb_cccd, lb_sdt, lb_pb, lb_cv, lb_hopdong, pb_imgnv, nv.MaNV);
             
 
 

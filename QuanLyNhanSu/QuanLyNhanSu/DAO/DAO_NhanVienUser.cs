@@ -42,6 +42,13 @@ namespace QuanLyNhanSu.DAO
             return firstUser;
         }
 
+        public NhanVien getNv (string username)
+        {
+
+            return dbo.NhanViens.SingleOrDefault(nv => nv.username == username);
+
+        }
+
         
     }
 }

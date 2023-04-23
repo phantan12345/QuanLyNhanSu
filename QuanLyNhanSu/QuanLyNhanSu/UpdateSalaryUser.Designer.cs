@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhanSu
 {
-    partial class InsuranceUser
+    partial class UpdateSalaryUser
     {
         /// <summary>
         /// Required designer variable.
@@ -41,11 +41,10 @@
             this.txtThang = new System.Windows.Forms.TextBox();
             this.btnXem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dGIsurance = new System.Windows.Forms.DataGridView();
+            this.dGSalary = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGIsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,10 +55,10 @@
             this.groupBox1.Controls.Add(this.lbName);
             this.groupBox1.Controls.Add(this.lbChucVu);
             this.groupBox1.Controls.Add(this.lbMaNv);
-            this.groupBox1.Location = new System.Drawing.Point(30, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1093, 106);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
@@ -123,13 +122,12 @@
             this.groupBox2.Controls.Add(this.txtThang);
             this.groupBox2.Controls.Add(this.btnXem);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(30, 124);
+            this.groupBox2.Location = new System.Drawing.Point(12, 124);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1093, 107);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tra cứu";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label4
             // 
@@ -164,7 +162,6 @@
             this.btnXem.TabIndex = 7;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // label5
             // 
@@ -175,41 +172,30 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Năm:";
             // 
-            // button1
+            // dGSalary
             // 
-            this.button1.Location = new System.Drawing.Point(450, 557);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 39);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dGSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dGSalary.Location = new System.Drawing.Point(12, 253);
+            this.dGSalary.Name = "dGSalary";
+            this.dGSalary.RowTemplate.Height = 24;
+            this.dGSalary.Size = new System.Drawing.Size(1093, 304);
+            this.dGSalary.TabIndex = 18;
             // 
-            // dGIsurance
-            // 
-            this.dGIsurance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dGIsurance.Location = new System.Drawing.Point(30, 237);
-            this.dGIsurance.Name = "dGIsurance";
-            this.dGIsurance.RowTemplate.Height = 24;
-            this.dGIsurance.Size = new System.Drawing.Size(1093, 304);
-            this.dGIsurance.TabIndex = 17;
-            // 
-            // InsuranceUser
+            // UpdateSalaryUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 657);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1129, 659);
+            this.Controls.Add(this.dGSalary);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dGIsurance);
-            this.Name = "InsuranceUser";
-            this.Text = "InsuranceUser";
-            this.Load += new System.EventHandler(this.InsuranceUser_Load);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "UpdateSalaryUser";
+            this.Text = "UpdateSalaryUser";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGIsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGSalary)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,7 +215,6 @@
         private System.Windows.Forms.TextBox txtThang;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dGIsurance;
+        private System.Windows.Forms.DataGridView dGSalary;
     }
 }

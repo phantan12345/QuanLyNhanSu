@@ -11,22 +11,21 @@ using System.Windows.Forms;
 
 namespace QuanLyNhanSu
 {
-    public partial class SalaryUser : Form
+    public partial class UpdateSalaryUser : Form
     {
-
-        BUS_SalaryUser salaryUser;
+        BUS_UpdateSalary salaryUser;
         BUS_NhanVienUser nhanVienUser;
-        public SalaryUser()
+        public UpdateSalaryUser()
         {
             InitializeComponent();
-            salaryUser = new BUS_SalaryUser();
+            salaryUser = new BUS_UpdateSalary();
             nhanVienUser = new BUS_NhanVienUser();
         }
 
-        public SalaryUser(NhanVien nv): this()
+        public UpdateSalaryUser(NhanVien nv) : this()
         {
             dGSalary.DataSource = null;
-            salaryUser.getSalary(dGSalary, nv.MaNV);
+            salaryUser.getUpdateSalary(dGSalary, nv.MaNV);
             //dGSalary.Columns[0].Name = "Mã Nhân Viên";
             //dGSalary.Columns[1].Name = "Tháng";
             //dGSalary.Columns[2].Name = "Năm";
@@ -49,34 +48,34 @@ namespace QuanLyNhanSu
             //dGSalary.Columns[09].Width = (int)(dGSalary.Width * 0.1);
             nhanVienUser.getUser2(lbMaNv, lbName, lbChucVu, lbPhongBan, nv.MaNV);
         }
-        
+
         private void SalaryUser_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
-        private void btnXem_Click_1(object sender, EventArgs e)
-        {
-            dGSalary.DataSource = null;
-            if( txtNam.Text == "")
-            {
-                txtNam.Text = "0";
-            }
-            if (txtThang.Text == "")
-            {
-                txtThang.Text = "0";
-            }
+        //private void btnXem_Click_1(object sender, EventArgs e)
+        //{
+        //    dGSalary.DataSource = null;
+        //    if (txtNam.Text == "")
+        //    {
+        //        txtNam.Text = "0";
+        //    }
+        //    if (txtThang.Text == "")
+        //    {
+        //        txtThang.Text = "0";
+        //    }
 
-            salaryUser.searchSalary(dGSalary, lbMaNv.Text, Int32.Parse(txtThang.Text), Int32.Parse(txtNam.Text));
-            txtNam.Text = "";
-            txtThang.Text = "";
-        }
+        //    salaryUser.searchSalary(dGSalary, lbMaNv.Text, Int32.Parse(txtThang.Text), Int32.Parse(txtNam.Text));
+        //    txtNam.Text = "";
+        //    txtThang.Text = "";
+        //}
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {

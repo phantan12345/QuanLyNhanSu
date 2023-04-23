@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_baohiem = new System.Windows.Forms.Button();
             this.btn_bangcong = new System.Windows.Forms.Button();
             this.btn_luong = new System.Windows.Forms.Button();
             this.btn_ttcn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_option = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.lb_cv = new System.Windows.Forms.Label();
             this.lb_hopdong = new System.Windows.Forms.Label();
             this.lb_pb = new System.Windows.Forms.Label();
-            this.pb_imgnv = new System.Windows.Forms.PictureBox();
             this.lb_ngaysinh = new System.Windows.Forms.Label();
             this.lb_manv = new System.Windows.Forms.Label();
             this.lb_cccd = new System.Windows.Forms.Label();
@@ -51,18 +51,22 @@
             this.lb_email = new System.Windows.Forms.Label();
             this.lb_user = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
+            this.pb_imgnv = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel_body.SuspendLayout();
             this.btn_exit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_imgnv)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_imgnv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btn_baohiem);
             this.panel1.Controls.Add(this.btn_bangcong);
@@ -76,15 +80,38 @@
             this.panel1.Size = new System.Drawing.Size(243, 761);
             this.panel1.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 602);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(243, 77);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Quá trình tăng lương";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 521);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(243, 77);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Phòng ban";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 521);
+            this.button1.Location = new System.Drawing.Point(0, 684);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(243, 77);
             this.button1.TabIndex = 5;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_baohiem
             // 
@@ -128,17 +155,6 @@
             this.btn_ttcn.Text = "Thông tin cá nhân";
             this.btn_ttcn.UseVisualStyleBackColor = true;
             this.btn_ttcn.Click += new System.EventHandler(this.btn_ttcn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyNhanSu.Properties.Resources.hr1;
-            this.pictureBox1.Location = new System.Drawing.Point(5, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(238, 208);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -201,7 +217,7 @@
             this.lb_cv.Location = new System.Drawing.Point(718, 115);
             this.lb_cv.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_cv.Name = "lb_cv";
-            this.lb_cv.Size = new System.Drawing.Size(63, 17);
+            this.lb_cv.Size = new System.Drawing.Size(50, 14);
             this.lb_cv.TabIndex = 8;
             this.lb_cv.Text = "Chức vụ:";
             // 
@@ -211,7 +227,7 @@
             this.lb_hopdong.Location = new System.Drawing.Point(718, 172);
             this.lb_hopdong.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_hopdong.Name = "lb_hopdong";
-            this.lb_hopdong.Size = new System.Drawing.Size(74, 17);
+            this.lb_hopdong.Size = new System.Drawing.Size(59, 14);
             this.lb_hopdong.TabIndex = 7;
             this.lb_hopdong.Text = "Hợp đồng:";
             // 
@@ -221,19 +237,9 @@
             this.lb_pb.Location = new System.Drawing.Point(718, 70);
             this.lb_pb.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_pb.Name = "lb_pb";
-            this.lb_pb.Size = new System.Drawing.Size(81, 17);
+            this.lb_pb.Size = new System.Drawing.Size(65, 14);
             this.lb_pb.TabIndex = 6;
             this.lb_pb.Text = "Phòng ban:";
-            // 
-            // pb_imgnv
-            // 
-            this.pb_imgnv.Location = new System.Drawing.Point(30, 45);
-            this.pb_imgnv.Margin = new System.Windows.Forms.Padding(5);
-            this.pb_imgnv.Name = "pb_imgnv";
-            this.pb_imgnv.Size = new System.Drawing.Size(250, 245);
-            this.pb_imgnv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_imgnv.TabIndex = 5;
-            this.pb_imgnv.TabStop = false;
             // 
             // lb_ngaysinh
             // 
@@ -241,7 +247,7 @@
             this.lb_ngaysinh.Location = new System.Drawing.Point(333, 115);
             this.lb_ngaysinh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_ngaysinh.Name = "lb_ngaysinh";
-            this.lb_ngaysinh.Size = new System.Drawing.Size(75, 17);
+            this.lb_ngaysinh.Size = new System.Drawing.Size(60, 14);
             this.lb_ngaysinh.TabIndex = 2;
             this.lb_ngaysinh.Text = "Ngày sinh:";
             // 
@@ -251,7 +257,7 @@
             this.lb_manv.Location = new System.Drawing.Point(333, 70);
             this.lb_manv.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_manv.Name = "lb_manv";
-            this.lb_manv.Size = new System.Drawing.Size(54, 17);
+            this.lb_manv.Size = new System.Drawing.Size(43, 14);
             this.lb_manv.TabIndex = 1;
             this.lb_manv.Text = "Mã NV:";
             // 
@@ -261,7 +267,7 @@
             this.lb_cccd.Location = new System.Drawing.Point(333, 172);
             this.lb_cccd.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_cccd.Name = "lb_cccd";
-            this.lb_cccd.Size = new System.Drawing.Size(49, 17);
+            this.lb_cccd.Size = new System.Drawing.Size(39, 14);
             this.lb_cccd.TabIndex = 4;
             this.lb_cccd.Text = "CCCD:";
             // 
@@ -271,7 +277,7 @@
             this.lb_sdt.Location = new System.Drawing.Point(333, 226);
             this.lb_sdt.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_sdt.Name = "lb_sdt";
-            this.lb_sdt.Size = new System.Drawing.Size(40, 17);
+            this.lb_sdt.Size = new System.Drawing.Size(32, 14);
             this.lb_sdt.TabIndex = 0;
             this.lb_sdt.Text = "SĐT:";
             // 
@@ -288,6 +294,7 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lb_email
             // 
@@ -295,7 +302,7 @@
             this.lb_email.Location = new System.Drawing.Point(27, 126);
             this.lb_email.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(46, 17);
+            this.lb_email.Size = new System.Drawing.Size(37, 14);
             this.lb_email.TabIndex = 2;
             this.lb_email.Text = "Email:";
             // 
@@ -305,7 +312,7 @@
             this.lb_user.Location = new System.Drawing.Point(25, 42);
             this.lb_user.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_user.Name = "lb_user";
-            this.lb_user.Size = new System.Drawing.Size(75, 17);
+            this.lb_user.Size = new System.Drawing.Size(60, 14);
             this.lb_user.TabIndex = 1;
             this.lb_user.Text = "Tài khoản:";
             // 
@@ -315,9 +322,30 @@
             this.lb_name.Location = new System.Drawing.Point(25, 80);
             this.lb_name.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lb_name.Name = "lb_name";
-            this.lb_name.Size = new System.Drawing.Size(54, 17);
+            this.lb_name.Size = new System.Drawing.Size(43, 14);
             this.lb_name.TabIndex = 0;
             this.lb_name.Text = "Họ tên:";
+            // 
+            // pb_imgnv
+            // 
+            this.pb_imgnv.Location = new System.Drawing.Point(30, 45);
+            this.pb_imgnv.Margin = new System.Windows.Forms.Padding(5);
+            this.pb_imgnv.Name = "pb_imgnv";
+            this.pb_imgnv.Size = new System.Drawing.Size(250, 245);
+            this.pb_imgnv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_imgnv.TabIndex = 5;
+            this.pb_imgnv.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyNhanSu.Properties.Resources.hr1;
+            this.pictureBox1.Location = new System.Drawing.Point(5, -1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(238, 208);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MainUser
             // 
@@ -334,15 +362,15 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.MainUser_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_body.ResumeLayout(false);
             this.btn_exit.ResumeLayout(false);
             this.btn_exit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_imgnv)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_imgnv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,5 +400,7 @@
         private System.Windows.Forms.Label lb_manv;
         private System.Windows.Forms.Label lb_sdt;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }

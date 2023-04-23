@@ -28,10 +28,10 @@ namespace QuanLyNhanSu
 
         }
 
-        public InsuranceUser(string manv) : this()
+        public InsuranceUser(NhanVien nv) : this()
         {
             dGIsurance.DataSource = null;
-            insuranceUser.getInsurance(dGIsurance, manv);
+            insuranceUser.getInsurance(dGIsurance, nv.MaNV);
             //dGSalary.Columns[0].Name = "Mã Nhân Viên";
             //dGSalary.Columns[1].Name = "Tháng";
             //dGSalary.Columns[2].Name = "Năm";
@@ -52,7 +52,7 @@ namespace QuanLyNhanSu
             //dGSalary.Columns[07].Width = (int)(dGSalary.Width * 0.1);
             //dGSalary.Columns[08].Width = (int)(dGSalary.Width * 0.1);
             //dGSalary.Columns[09].Width = (int)(dGSalary.Width * 0.1);
-            nhanVienUser.getUser2(lbMaNv, lbName, lbChucVu, lbPhongBan, manv);
+            nhanVienUser.getUser2(lbMaNv, lbName, lbChucVu, lbPhongBan, nv.MaNV);
         }
 
         private void btnXem_Click(object sender, EventArgs e)
@@ -70,6 +70,11 @@ namespace QuanLyNhanSu
             insuranceUser.searchInsurance(dGIsurance, lbMaNv.Text, Int32.Parse(txtThang.Text), Int32.Parse(txtNam.Text));
             txtNam.Text = "";
             txtThang.Text = "";
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

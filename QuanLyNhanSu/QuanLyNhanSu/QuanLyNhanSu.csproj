@@ -64,23 +64,32 @@
     <Compile Include="BaoHiem.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS\BUS_DepartmentUser.cs" />
     <Compile Include="BUS\BUS_InsuranceUser.cs" />
+    <Compile Include="BUS\BUS_LoginUser.cs" />
     <Compile Include="BUS\BUS_Luong.cs" />
     <Compile Include="BUS\BUS_NhanVienUser.cs" />
     <Compile Include="BUS\BUS_SalaryUser.cs" />
-    <Compile Include="DangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="BUS\BUS_UpdateSalary.cs" />
+    <Compile Include="DAO\DAO_DepartmentUser.cs" />
     <Compile Include="DAO\DAO_InsuranceUser.cs" />
+    <Compile Include="DAO\DAO_LoginUser.cs" />
     <Compile Include="DAO\DAO_Luong.cs" />
     <Compile Include="DAO\DAO_NhanVien.cs" />
     <Compile Include="DAO\DAO_NhanVienUser.cs" />
     <Compile Include="DAO\DAO_SalaryUser.cs" />
+    <Compile Include="DAO\DAO_UpdateSalary.cs" />
     <Compile Include="Department.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Department.Designer.cs">
       <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmentUser.Designer.cs">
+      <DependentUpon>DepartmentUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
@@ -93,6 +102,12 @@
     </Compile>
     <Compile Include="InsuranceUser.Designer.cs">
       <DependentUpon>InsuranceUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginUser.Designer.cs">
+      <DependentUpon>LoginUser.cs</DependentUpon>
     </Compile>
     <Compile Include="SalaryUser.cs">
       <SubType>Form</SubType>
@@ -171,14 +186,26 @@
     <Compile Include="TtcnUser.designer.cs">
       <DependentUpon>TtcnUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateSalaryUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSalaryUser.Designer.cs">
+      <DependentUpon>UpdateSalaryUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Department.resx">
       <DependentUpon>Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentUser.resx">
+      <DependentUpon>DepartmentUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InsuranceUser.resx">
       <DependentUpon>InsuranceUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginUser.resx">
+      <DependentUpon>LoginUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFr.resx">
       <DependentUpon>MainFr.cs</DependentUpon>
@@ -207,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TtcnUser.resx">
       <DependentUpon>TtcnUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSalaryUser.resx">
+      <DependentUpon>UpdateSalaryUser.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

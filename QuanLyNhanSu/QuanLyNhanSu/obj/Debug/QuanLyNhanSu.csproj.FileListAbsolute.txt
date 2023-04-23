@@ -37,3 +37,6 @@ D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\GUI.Mai
 D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\GUI.TtcnUser.resources
 D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.SalaryUser.resources
 D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.InsuranceUser.resources
+D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.DepartmentUser.resources
+D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.LoginUser.resources
+D:\Projects\Nam3\LTCSDL\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.UpdateSalaryUser.resources

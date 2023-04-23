@@ -58,5 +58,10 @@ namespace QuanLyNhanSu.BUS
                 ma.Text = user.MaNV;
             }
         }
+
+        public NhanVien getNv (string username)
+        {
+            return nv.getNv(username);
+        }
     }
 }

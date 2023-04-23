@@ -11,22 +11,27 @@ using System.Windows.Forms;
 
 namespace QuanLyNhanSu
 {
-    public partial class SalaryUser : Form
+    public partial class DepartmentUser : Form
     {
 
-        BUS_SalaryUser salaryUser;
+        BUS_DepartmentUser departmentUser;
         BUS_NhanVienUser nhanVienUser;
-        public SalaryUser()
+        public DepartmentUser()
         {
             InitializeComponent();
-            salaryUser = new BUS_SalaryUser();
-            nhanVienUser = new BUS_NhanVienUser();
+            departmentUser = new BUS_DepartmentUser();
+            nhanVienUser    = new BUS_NhanVienUser();
         }
 
-        public SalaryUser(NhanVien nv): this()
+        private void DepartmentUser_Load(object sender, EventArgs e)
         {
-            dGSalary.DataSource = null;
-            salaryUser.getSalary(dGSalary, nv.MaNV);
+
+        }
+
+        public DepartmentUser(NhanVien nv) : this()
+        {
+            dGDepartment.DataSource = null;
+            departmentUser.getEmployee(dGDepartment, nv.MaPhong);
             //dGSalary.Columns[0].Name = "Mã Nhân Viên";
             //dGSalary.Columns[1].Name = "Tháng";
             //dGSalary.Columns[2].Name = "Năm";
@@ -49,36 +54,13 @@ namespace QuanLyNhanSu
             //dGSalary.Columns[09].Width = (int)(dGSalary.Width * 0.1);
             nhanVienUser.getUser2(lbMaNv, lbName, lbChucVu, lbPhongBan, nv.MaNV);
         }
-        
-        private void SalaryUser_Load(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void btnXem_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            
 
         }
 
-        private void btnXem_Click_1(object sender, EventArgs e)
-        {
-            dGSalary.DataSource = null;
-            if( txtNam.Text == "")
-            {
-                txtNam.Text = "0";
-            }
-            if (txtThang.Text == "")
-            {
-                txtThang.Text = "0";
-            }
-
-            salaryUser.searchSalary(dGSalary, lbMaNv.Text, Int32.Parse(txtThang.Text), Int32.Parse(txtNam.Text));
-            txtNam.Text = "";
-            txtThang.Text = "";
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

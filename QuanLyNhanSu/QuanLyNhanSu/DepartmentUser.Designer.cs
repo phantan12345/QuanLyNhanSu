@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhanSu
 {
-    partial class InsuranceUser
+    partial class DepartmentUser
     {
         /// <summary>
         /// Required designer variable.
@@ -41,11 +41,10 @@
             this.txtThang = new System.Windows.Forms.TextBox();
             this.btnXem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dGIsurance = new System.Windows.Forms.DataGridView();
+            this.dGDepartment = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGIsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,10 +55,10 @@
             this.groupBox1.Controls.Add(this.lbName);
             this.groupBox1.Controls.Add(this.lbChucVu);
             this.groupBox1.Controls.Add(this.lbMaNv);
-            this.groupBox1.Location = new System.Drawing.Point(30, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1093, 106);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
@@ -123,26 +122,26 @@
             this.groupBox2.Controls.Add(this.txtThang);
             this.groupBox2.Controls.Add(this.btnXem);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(30, 124);
+            this.groupBox2.Location = new System.Drawing.Point(12, 124);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1093, 107);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tra cứu";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(176, 66);
+            this.label4.Location = new System.Drawing.Point(169, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tháng: ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(234, 18);
+            this.txtNam.Location = new System.Drawing.Point(227, 69);
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(100, 22);
             this.txtNam.TabIndex = 6;
@@ -150,7 +149,7 @@
             // 
             // txtThang
             // 
-            this.txtThang.Location = new System.Drawing.Point(234, 63);
+            this.txtThang.Location = new System.Drawing.Point(227, 21);
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(100, 22);
             this.txtThang.TabIndex = 5;
@@ -164,52 +163,42 @@
             this.btnXem.TabIndex = 7;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(176, 21);
+            this.label5.Location = new System.Drawing.Point(169, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Năm:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // button1
+            // dGDepartment
             // 
-            this.button1.Location = new System.Drawing.Point(450, 557);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 39);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dGDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dGDepartment.Location = new System.Drawing.Point(12, 237);
+            this.dGDepartment.Name = "dGDepartment";
+            this.dGDepartment.RowTemplate.Height = 24;
+            this.dGDepartment.Size = new System.Drawing.Size(1093, 304);
+            this.dGDepartment.TabIndex = 18;
             // 
-            // dGIsurance
-            // 
-            this.dGIsurance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dGIsurance.Location = new System.Drawing.Point(30, 237);
-            this.dGIsurance.Name = "dGIsurance";
-            this.dGIsurance.RowTemplate.Height = 24;
-            this.dGIsurance.Size = new System.Drawing.Size(1093, 304);
-            this.dGIsurance.TabIndex = 17;
-            // 
-            // InsuranceUser
+            // DepartmentUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 657);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1113, 585);
+            this.Controls.Add(this.dGDepartment);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dGIsurance);
-            this.Name = "InsuranceUser";
-            this.Text = "InsuranceUser";
-            this.Load += new System.EventHandler(this.InsuranceUser_Load);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "DepartmentUser";
+            this.Text = "DepartmentUser";
+            this.Load += new System.EventHandler(this.DepartmentUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGIsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGDepartment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,7 +218,6 @@
         private System.Windows.Forms.TextBox txtThang;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dGIsurance;
+        private System.Windows.Forms.DataGridView dGDepartment;
     }
 }
