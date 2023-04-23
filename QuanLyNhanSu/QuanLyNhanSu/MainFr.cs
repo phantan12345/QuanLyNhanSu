@@ -63,10 +63,5 @@ namespace QuanLyNhanSu
             panel_Show.Controls.Add(de);
             de.Show();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
