@@ -71,6 +71,8 @@
     <Compile Include="BUS\BUS_NhanVienUser.cs" />
     <Compile Include="BUS\BUS_SalaryUser.cs" />
     <Compile Include="BUS\BUS_UpdateSalary.cs" />
+    <Compile Include="BUS_Admin\BUS_Luong.cs" />
+    <Compile Include="BUS_Admin\BUS_NhanVien.cs" />
     <Compile Include="BUS_Admin\BUS_PhongBan.cs" />
     <Compile Include="DAO\DAO_DepartmentUser.cs" />
     <Compile Include="DAO\DAO_InsuranceUser.cs" />
@@ -80,6 +82,8 @@
     <Compile Include="DAO\DAO_NhanVienUser.cs" />
     <Compile Include="DAO\DAO_SalaryUser.cs" />
     <Compile Include="DAO\DAO_UpdateSalary.cs" />
+    <Compile Include="DAO_ADMIN\DAO_Luong.cs" />
+    <Compile Include="DAO_ADMIN\DAO_NhanVien.cs" />
     <Compile Include="DAO_ADMIN\DAO_PhongBan.cs" />
     <Compile Include="Department.cs">
       <SubType>Form</SubType>
