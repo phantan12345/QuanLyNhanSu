@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Department));
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel_ThongTin = new System.Windows.Forms.Panel();
             this.gb_De = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,14 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_phongban)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel4
-            // 
-            this.panel4.AutoSize = true;
-            this.panel4.Location = new System.Drawing.Point(53, 66);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1214, 860);
-            this.panel4.TabIndex = 9;
-            // 
             // panel_ThongTin
             // 
             this.panel_ThongTin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -70,7 +60,7 @@
             this.panel_ThongTin.Location = new System.Drawing.Point(0, 0);
             this.panel_ThongTin.Margin = new System.Windows.Forms.Padding(5);
             this.panel_ThongTin.Name = "panel_ThongTin";
-            this.panel_ThongTin.Size = new System.Drawing.Size(1077, 700);
+            this.panel_ThongTin.Size = new System.Drawing.Size(1168, 696);
             this.panel_ThongTin.TabIndex = 2;
             // 
             // gb_De
@@ -85,7 +75,7 @@
             this.gb_De.Controls.Add(this.label13);
             this.gb_De.Controls.Add(this.label14);
             this.gb_De.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_De.Location = new System.Drawing.Point(46, 13);
+            this.gb_De.Location = new System.Drawing.Point(112, 4);
             this.gb_De.Margin = new System.Windows.Forms.Padding(4);
             this.gb_De.Name = "gb_De";
             this.gb_De.Padding = new System.Windows.Forms.Padding(4);
@@ -176,7 +166,7 @@
             this.groupBox6.Controls.Add(this.btn_add);
             this.groupBox6.Controls.Add(this.btn_update);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(46, 161);
+            this.groupBox6.Location = new System.Drawing.Point(112, 161);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
@@ -207,7 +197,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_delete.BackgroundImage")));
+            this.btn_delete.BackgroundImage = global::QuanLyNhanSu.Properties.Resources.xanh;
             this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -227,7 +217,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_add.BackgroundImage")));
+            this.btn_add.BackgroundImage = global::QuanLyNhanSu.Properties.Resources.xanh;
             this.btn_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_add.FlatAppearance.BorderSize = 0;
             this.btn_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -247,7 +237,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_update.BackgroundImage")));
+            this.btn_update.BackgroundImage = global::QuanLyNhanSu.Properties.Resources.xanh;
             this.btn_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_update.FlatAppearance.BorderSize = 0;
             this.btn_update.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -268,7 +258,7 @@
             // dg_phongban
             // 
             this.dg_phongban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_phongban.Location = new System.Drawing.Point(46, 238);
+            this.dg_phongban.Location = new System.Drawing.Point(112, 238);
             this.dg_phongban.Margin = new System.Windows.Forms.Padding(4);
             this.dg_phongban.Name = "dg_phongban";
             this.dg_phongban.RowHeadersWidth = 51;
@@ -280,9 +270,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 700);
+            this.ClientSize = new System.Drawing.Size(1168, 696);
             this.Controls.Add(this.panel_ThongTin);
-            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Department";
             this.Text = "Department";
@@ -293,13 +282,10 @@
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_phongban)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel_ThongTin;
         private System.Windows.Forms.GroupBox gb_De;
         private System.Windows.Forms.Label label2;

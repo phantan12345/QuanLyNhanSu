@@ -15,7 +15,6 @@ namespace QuanLyNhanSu
     public partial class BangLuong
     {
         public string MaLuong { get; set; }
-        public Nullable<double> LCB { get; set; }
         public Nullable<double> PCPhongBan { get; set; }
         public string GhiChu { get; set; }
         public string MaNV { get; set; }
@@ -27,8 +26,8 @@ namespace QuanLyNhanSu
         public Nullable<double> Thuong { get; set; }
         public Nullable<double> KyLuat { get; set; }
         public Nullable<int> SoGioTangCa { get; set; }
-        public Nullable<double> BaoHiem { get; set; }
         public Nullable<double> LuongTotal { get; set; }
+        public Nullable<double> BaoHiem { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }
     }

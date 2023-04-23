@@ -17,10 +17,10 @@ namespace QuanLyNhanSu
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NhanVien()
         {
-            this.BangCong = new HashSet<BangCong>();
-            this.BangLuong = new HashSet<BangLuong>();
-            this.BaoHiem = new HashSet<BaoHiem>();
-            this.TangLuong = new HashSet<TangLuong>();
+            this.BangCongs = new HashSet<BangCong>();
+            this.BangLuongs = new HashSet<BangLuong>();
+            this.BaoHiems = new HashSet<BaoHiem>();
+            this.TangLuongs = new HashSet<TangLuong>();
         }
     
         public string MaNV { get; set; }
@@ -44,15 +44,16 @@ namespace QuanLyNhanSu
         public Nullable<bool> role { get; set; }
         public Nullable<bool> active { get; set; }
         public string email { get; set; }
+        public Nullable<double> LCB { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BangCong> BangCong { get; set; }
+        public virtual ICollection<BangCong> BangCongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BangLuong> BangLuong { get; set; }
+        public virtual ICollection<BangLuong> BangLuongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BaoHiem> BaoHiem { get; set; }
+        public virtual ICollection<BaoHiem> BaoHiems { get; set; }
         public virtual PhongBan PhongBan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TangLuong> TangLuong { get; set; }
+        public virtual ICollection<TangLuong> TangLuongs { get; set; }
     }
 }

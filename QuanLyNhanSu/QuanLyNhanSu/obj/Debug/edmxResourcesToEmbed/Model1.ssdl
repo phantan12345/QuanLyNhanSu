@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="BangCong">
     <Key>
       <PropertyRef Name="MaBangCong" />
@@ -18,7 +18,6 @@
       <PropertyRef Name="MaLuong" />
     </Key>
     <Property Name="MaLuong" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="LCB" Type="float" />
     <Property Name="PCPhongBan" Type="float" />
     <Property Name="GhiChu" Type="nvarchar(max)" />
     <Property Name="MaNV" Type="char" MaxLength="10" />
@@ -30,8 +29,8 @@
     <Property Name="Thuong" Type="float" />
     <Property Name="KyLuat" Type="float" />
     <Property Name="SoGioTangCa" Type="int" />
-    <Property Name="BaoHiem" Type="float" />
     <Property Name="LuongTotal" Type="float" />
+    <Property Name="BaoHiem" Type="float" />
   </EntityType>
   <EntityType Name="BaoHiem">
     <Key>
@@ -69,6 +68,7 @@
     <Property Name="role" Type="bit" />
     <Property Name="active" Type="bit" />
     <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="LCB" Type="float" />
   </EntityType>
   <EntityType Name="PhongBan">
     <Key>
@@ -76,8 +76,19 @@
     </Key>
     <Property Name="MaPhongBan" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="TenPhongBan" Type="nvarchar" MaxLength="50" />
-    <Property Name="NgayThanhLap" Type="date" />
-    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayThanhLap" Type="datetime" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+    <Property Name="MaBoPhan" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TangLuong">
     <Key>
@@ -196,6 +207,7 @@
     <EntitySet Name="BaoHiem" EntityType="Self.BaoHiem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhongBan" EntityType="Self.PhongBan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TangLuong" EntityType="Self.TangLuong" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_BangCong_NhanVien" Association="Self.FK_BangCong_NhanVien">
       <End Role="NhanVien" EntitySet="NhanVien" />

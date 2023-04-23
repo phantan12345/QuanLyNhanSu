@@ -1,12 +1,10 @@
-﻿using QuanLyNhanSu.BUS;
+﻿using QuanLyNhanSu.BUS_Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,7 +26,7 @@ namespace QuanLyNhanSu
             ds.getPhongBan(dg_phongban);
         }
 
-       
+
 
         private void Department_Load(object sender, EventArgs e)
         {
@@ -38,18 +36,18 @@ namespace QuanLyNhanSu
 
         private void button15_Click(object sender, EventArgs e)
         {
-            PhongBan p=new PhongBan();
-            p.MaPhongBan=txt_maphongban.Text;
-            p.TenPhongBan=txt_tenphongban.Text;
-            p.GhiChu=txt_ghichu.Text;
+            PhongBan p = new PhongBan();
+            p.MaPhongBan = txt_maphongban.Text;
+            p.TenPhongBan = txt_tenphongban.Text;
+            p.GhiChu = txt_ghichu.Text;
             p.NgayThanhLap = Convert.ToDateTime(dt_ngaythanhlap.Value.ToString());
-         
+
 
             ds.addPhongBan(p);
             load();
         }
 
-      
+
 
         private void btn_delete_Click_1(object sender, EventArgs e)
         {
@@ -58,7 +56,7 @@ namespace QuanLyNhanSu
             {
                 int index = dg_phongban.CurrentCell.RowIndex;
                 string ma = dg_phongban.Rows[index].Cells[0].Value.ToString();
-                ma=ma.Trim();
+                ma = ma.Trim();
 
                 if (ds.deletePhongBan(ma))
                 {
@@ -74,11 +72,11 @@ namespace QuanLyNhanSu
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-           
+
             if (this.dg_phongban.SelectedRows.Count == 0)
             {
-               
-                
+
+
                 int index = dg_phongban.CurrentCell.RowIndex;
                 string ma = dg_phongban.Rows[index].Cells[0].Value.ToString();
                 ma = ma.Trim();
@@ -119,5 +117,5 @@ namespace QuanLyNhanSu
             }
         }
     }
-    
+
 }

@@ -20,6 +20,7 @@ namespace QuanLyNhanSu
         private void btn_ttcn_Click(object sender, EventArgs e)
         {
             Employee em = new Employee();
+            
             panel_Show.Show();
             panel_Show.Controls.Clear();
             em.TopLevel = false;
@@ -62,6 +63,11 @@ namespace QuanLyNhanSu
             de.Dock = DockStyle.Fill;
             panel_Show.Controls.Add(de);
             de.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

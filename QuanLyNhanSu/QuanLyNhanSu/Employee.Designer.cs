@@ -50,7 +50,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -60,7 +59,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel_ThongTin = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -252,23 +250,13 @@
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(126, 346);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(918, 275);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.dataGridView2);
-            this.panel6.Location = new System.Drawing.Point(52, 335);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(918, 275);
-            this.panel6.TabIndex = 5;
             // 
             // groupBox3
             // 
@@ -278,7 +266,7 @@
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(52, 231);
+            this.groupBox3.Location = new System.Drawing.Point(126, 237);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -365,13 +353,13 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.dataGridView2);
             this.panel5.Controls.Add(this.groupBox3);
-            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.groupBox4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1017, 620);
+            this.panel5.Size = new System.Drawing.Size(1168, 696);
             this.panel5.TabIndex = 2;
             // 
             // groupBox4
@@ -398,7 +386,7 @@
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(52, 13);
+            this.groupBox4.Location = new System.Drawing.Point(126, 13);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
@@ -415,20 +403,19 @@
             this.panel_ThongTin.Location = new System.Drawing.Point(0, 0);
             this.panel_ThongTin.Margin = new System.Windows.Forms.Padding(5);
             this.panel_ThongTin.Name = "panel_ThongTin";
-            this.panel_ThongTin.Size = new System.Drawing.Size(1017, 620);
+            this.panel_ThongTin.Size = new System.Drawing.Size(1168, 696);
             this.panel_ThongTin.TabIndex = 6;
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 620);
+            this.ClientSize = new System.Drawing.Size(1168, 696);
             this.Controls.Add(this.panel_ThongTin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee";
             this.Text = "Employee";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -461,7 +448,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;

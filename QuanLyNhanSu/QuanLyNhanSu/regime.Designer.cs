@@ -61,7 +61,7 @@
             this.panel_ThongTin.Location = new System.Drawing.Point(0, 0);
             this.panel_ThongTin.Margin = new System.Windows.Forms.Padding(5);
             this.panel_ThongTin.Name = "panel_ThongTin";
-            this.panel_ThongTin.Size = new System.Drawing.Size(1058, 678);
+            this.panel_ThongTin.Size = new System.Drawing.Size(1168, 696);
             this.panel_ThongTin.TabIndex = 4;
             // 
             // groupBox5
@@ -76,7 +76,7 @@
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(46, 22);
+            this.groupBox5.Location = new System.Drawing.Point(108, 22);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
@@ -167,7 +167,7 @@
             this.groupBox6.Controls.Add(this.button15);
             this.groupBox6.Controls.Add(this.button16);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(46, 170);
+            this.groupBox6.Location = new System.Drawing.Point(108, 182);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
@@ -255,7 +255,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(46, 289);
+            this.dataGridView2.Location = new System.Drawing.Point(108, 291);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -266,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 678);
+            this.ClientSize = new System.Drawing.Size(1168, 696);
             this.Controls.Add(this.panel_ThongTin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "regime";

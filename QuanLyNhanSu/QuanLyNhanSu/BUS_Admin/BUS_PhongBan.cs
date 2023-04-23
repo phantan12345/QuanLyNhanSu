@@ -1,13 +1,14 @@
-﻿using QuanLyNhanSu.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhanSu.DAO_ADMIN;
 
-namespace QuanLyNhanSu.BUS
+
+namespace QuanLyNhanSu.BUS_Admin
 {
     internal class BUS_PhongBan
     {
@@ -28,7 +29,8 @@ namespace QuanLyNhanSu.BUS
             {
                 ds.addPhongban(p);
                 MessageBox.Show("Đã Thêm Vào Database", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            } catch
+            }
+            catch
             {
                 MessageBox.Show("Không Thêm Vào Database", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
@@ -58,13 +60,13 @@ namespace QuanLyNhanSu.BUS
             {
                 return false;
             }
-            
-           
+
+
         }
 
         public PhongBan check(string ma)
         {
-            PhongBan p=ds.checkPhongBanByoj(ma);
+            PhongBan p = ds.checkPhongBanByoj(ma);
             return p;
         }
 
