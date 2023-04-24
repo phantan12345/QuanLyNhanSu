@@ -32,7 +32,7 @@ namespace QuanLyNhanSu
         public virtual DbSet<BaoHiem> BaoHiems { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhongBan> PhongBans { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TangLuong> TangLuongs { get; set; }
     
         public virtual ObjectResult<proc_logic_Result> proc_logic(string user, string pass, Nullable<bool> role)

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BangCong">
           <Key>
             <PropertyRef Name="MaBangCong" />
@@ -235,7 +235,8 @@
             <End Role="TangLuong" EntitySet="TangLuong" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NhanSuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -270,8 +271,8 @@
           <Property Name="KyLuat" Type="Double" />
           <Property Name="SoGioTangCa" Type="Int32" />
           <Property Name="LuongTotal" Type="Double" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
           <Property Name="BaoHiem" Type="Double" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="BaoHiem">
           <Key>
@@ -310,12 +311,12 @@
           <Property Name="role" Type="Boolean" />
           <Property Name="active" Type="Boolean" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="BangCongs" Relationship="Self.FK_BangCong_NhanVien" FromRole="NhanVien" ToRole="BangCong" />
-          <NavigationProperty Name="BangLuongs" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="NhanVien" ToRole="BangLuong" />
-          <NavigationProperty Name="BaoHiems" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="NhanVien" ToRole="BaoHiem" />
-          <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan" FromRole="NhanVien" ToRole="PhongBan" />
-          <NavigationProperty Name="TangLuongs" Relationship="Self.FK_TangLuong_NhanVien" FromRole="NhanVien" ToRole="TangLuong" />
           <Property Name="LCB" Type="Double" />
+          <NavigationProperty Name="BangCong" Relationship="Self.FK_BangCong_NhanVien" FromRole="NhanVien" ToRole="BangCong" />
+          <NavigationProperty Name="BangLuong" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="NhanVien" ToRole="BangLuong" />
+          <NavigationProperty Name="BaoHiem" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="NhanVien" ToRole="BaoHiem" />
+          <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan" FromRole="NhanVien" ToRole="PhongBan" />
+          <NavigationProperty Name="TangLuong" Relationship="Self.FK_TangLuong_NhanVien" FromRole="NhanVien" ToRole="TangLuong" />
         </EntityType>
         <EntityType Name="PhongBan">
           <Key>
@@ -325,10 +326,9 @@
           <Property Name="TenPhongBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayThanhLap" Type="DateTime" Precision="3" />
           <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MaBoPhan" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_PhongBan" FromRole="PhongBan" ToRole="NhanVien" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_NhanVien_PhongBan" FromRole="PhongBan" ToRole="NhanVien" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -411,32 +411,32 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="NhanSuEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BangCongs" EntityType="Self.BangCong" />
-          <EntitySet Name="BangLuongs" EntityType="Self.BangLuong" />
-          <EntitySet Name="BaoHiems" EntityType="Self.BaoHiem" />
-          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
-          <EntitySet Name="PhongBans" EntityType="Self.PhongBan" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="TangLuongs" EntityType="Self.TangLuong" />
+          <EntitySet Name="BangCong" EntityType="Self.BangCong" />
+          <EntitySet Name="BangLuong" EntityType="Self.BangLuong" />
+          <EntitySet Name="BaoHiem" EntityType="Self.BaoHiem" />
+          <EntitySet Name="NhanVien" EntityType="Self.NhanVien" />
+          <EntitySet Name="PhongBan" EntityType="Self.PhongBan" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TangLuong" EntityType="Self.TangLuong" />
           <AssociationSet Name="FK_BangCong_NhanVien" Association="Self.FK_BangCong_NhanVien">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="BangCong" EntitySet="BangCongs" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BangCong" EntitySet="BangCong" />
           </AssociationSet>
           <AssociationSet Name="FK_BangLuong_NhanVien1" Association="Self.FK_BangLuong_NhanVien1">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="BangLuong" EntitySet="BangLuongs" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BangLuong" EntitySet="BangLuong" />
           </AssociationSet>
           <AssociationSet Name="FK_BaoHiem_NhanVien" Association="Self.FK_BaoHiem_NhanVien">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="BaoHiem" EntitySet="BaoHiems" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="BaoHiem" EntitySet="BaoHiem" />
           </AssociationSet>
           <AssociationSet Name="FK_NhanVien_PhongBan" Association="Self.FK_NhanVien_PhongBan">
-            <End Role="PhongBan" EntitySet="PhongBans" />
-            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="PhongBan" EntitySet="PhongBan" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
           </AssociationSet>
           <AssociationSet Name="FK_TangLuong_NhanVien" Association="Self.FK_TangLuong_NhanVien">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="TangLuong" EntitySet="TangLuongs" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="TangLuong" EntitySet="TangLuong" />
           </AssociationSet>
           <FunctionImport Name="proc_logic" ReturnType="Collection(NhanSuModel.proc_logic_Result)">
             <Parameter Name="user" Mode="In" Type="String" />
@@ -500,6 +500,7 @@
           <Property Type="Boolean" Name="role" Nullable="true" />
           <Property Type="Boolean" Name="active" Nullable="true" />
           <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="LCB" Nullable="true" />
         </ComplexType>
         <ComplexType Name="proc_login_Result">
           <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
@@ -523,6 +524,7 @@
           <Property Type="Boolean" Name="role" Nullable="true" />
           <Property Type="Boolean" Name="active" Nullable="true" />
           <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="LCB" Nullable="true" />
         </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -541,7 +543,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities1">
-          <EntitySetMapping Name="BangCongs">
+          <EntitySetMapping Name="BangCong">
             <EntityTypeMapping TypeName="NhanSuModel.BangCong">
               <MappingFragment StoreEntitySet="BangCong">
                 <ScalarProperty Name="MaBangCong" ColumnName="MaBangCong" />
@@ -555,10 +557,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BangLuongs">
+          <EntitySetMapping Name="BangLuong">
             <EntityTypeMapping TypeName="NhanSuModel.BangLuong">
               <MappingFragment StoreEntitySet="BangLuong">
-                <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
                 <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
                 <ScalarProperty Name="PCPhongBan" ColumnName="PCPhongBan" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
@@ -572,10 +573,11 @@
                 <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
                 <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
                 <ScalarProperty Name="LuongTotal" ColumnName="LuongTotal" />
+                <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BaoHiems">
+          <EntitySetMapping Name="BaoHiem">
             <EntityTypeMapping TypeName="NhanSuModel.BaoHiem">
               <MappingFragment StoreEntitySet="BaoHiem">
                 <ScalarProperty Name="MaBH" ColumnName="MaBH" />
@@ -587,10 +589,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NhanViens">
+          <EntitySetMapping Name="NhanVien">
             <EntityTypeMapping TypeName="NhanSuModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
-                <ScalarProperty Name="LCB" ColumnName="LCB" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
@@ -612,22 +613,22 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PhongBans">
+          <EntitySetMapping Name="PhongBan">
             <EntityTypeMapping TypeName="NhanSuModel.PhongBan">
               <MappingFragment StoreEntitySet="PhongBan">
                 <ScalarProperty Name="MaPhongBan" ColumnName="MaPhongBan" />
                 <ScalarProperty Name="TenPhongBan" ColumnName="TenPhongBan" />
                 <ScalarProperty Name="NgayThanhLap" ColumnName="NgayThanhLap" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="NhanSuModel.sysdiagram">
+            <EntityTypeMapping TypeName="NhanSuModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -637,7 +638,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TangLuongs">
+          <EntitySetMapping Name="TangLuong">
             <EntityTypeMapping TypeName="NhanSuModel.TangLuong">
               <MappingFragment StoreEntitySet="TangLuong">
                 <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
@@ -673,6 +674,7 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -700,6 +702,7 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -741,7 +744,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

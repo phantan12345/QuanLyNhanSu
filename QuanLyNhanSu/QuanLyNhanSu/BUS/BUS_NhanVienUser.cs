@@ -31,7 +31,7 @@ namespace QuanLyNhanSu.BUS
                 ns.Text = "Ngày sinh: " + user.NgaySinh?.ToString("dd/MM/yyyy");
                 cccd.Text = "CCCD: " + user.CCCD;
                 sdt.Text = "SĐT: " + user.SoDienThoai;
-                pb.Text = "Phòng ban: " + user.TenPhongBan;
+                //pb.Text = "Phòng ban: " + user.TenPhongBan;
                 cv.Text = "Chức vụ: " + user.ChucVu;
                 hd.Text = "Hợp đồng: " + user.NgayKy?.ToString("dd/MM/yyyy");
                 if (user.GioiTinh)
@@ -43,6 +43,11 @@ namespace QuanLyNhanSu.BUS
                     p.Image = Image.FromFile(Application.StartupPath + @"\male.png");
                 }
             }
+            else
+            {
+
+                MessageBox.Show(user);
+            }
 
         }
 
@@ -53,7 +58,7 @@ namespace QuanLyNhanSu.BUS
             {
                
                 name.Text = "Họ tên: " + user.HoTen;
-                pb.Text = "Phòng ban: " + user.TenPhongBan;
+                //pb.Text = "Phòng ban: " + user.TenPhongBan;
                 cv.Text = "Chức vụ: " + user.ChucVu;
                 ma.Text = user.MaNV;
             }

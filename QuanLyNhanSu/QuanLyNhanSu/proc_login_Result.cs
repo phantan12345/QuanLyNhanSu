@@ -34,5 +34,6 @@ namespace QuanLyNhanSu
         public Nullable<bool> role { get; set; }
         public Nullable<bool> active { get; set; }
         public string email { get; set; }
+        public Nullable<double> LCB { get; set; }
     }
 }

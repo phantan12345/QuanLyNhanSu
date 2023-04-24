@@ -62,6 +62,7 @@ namespace GUI
         
         private void MainUser_Load(object sender, EventArgs e)
         {
+           
             
             nv1.getUser(lb_user, lb_name, lb_email, lb_manv, lb_ngaysinh, lb_cccd, lb_sdt, lb_pb, lb_cv, lb_hopdong, pb_imgnv, nhanVien.MaNV);
         }

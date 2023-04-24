@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities1">
-    <EntitySetMapping Name="BangCongs">
+    <EntitySetMapping Name="BangCong">
       <EntityTypeMapping TypeName="NhanSuModel.BangCong">
         <MappingFragment StoreEntitySet="BangCong">
           <ScalarProperty Name="MaBangCong" ColumnName="MaBangCong" />
@@ -15,10 +15,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="BangLuongs">
+    <EntitySetMapping Name="BangLuong">
       <EntityTypeMapping TypeName="NhanSuModel.BangLuong">
         <MappingFragment StoreEntitySet="BangLuong">
-          <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
           <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
           <ScalarProperty Name="PCPhongBan" ColumnName="PCPhongBan" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
@@ -32,10 +31,11 @@
           <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
           <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
           <ScalarProperty Name="LuongTotal" ColumnName="LuongTotal" />
+          <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="BaoHiems">
+    <EntitySetMapping Name="BaoHiem">
       <EntityTypeMapping TypeName="NhanSuModel.BaoHiem">
         <MappingFragment StoreEntitySet="BaoHiem">
           <ScalarProperty Name="MaBH" ColumnName="MaBH" />
@@ -47,10 +47,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NhanViens">
+    <EntitySetMapping Name="NhanVien">
       <EntityTypeMapping TypeName="NhanSuModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
-          <ScalarProperty Name="LCB" ColumnName="LCB" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
@@ -72,22 +71,22 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PhongBans">
+    <EntitySetMapping Name="PhongBan">
       <EntityTypeMapping TypeName="NhanSuModel.PhongBan">
         <MappingFragment StoreEntitySet="PhongBan">
           <ScalarProperty Name="MaPhongBan" ColumnName="MaPhongBan" />
           <ScalarProperty Name="TenPhongBan" ColumnName="TenPhongBan" />
           <ScalarProperty Name="NgayThanhLap" ColumnName="NgayThanhLap" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-          <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="NhanSuModel.sysdiagram">
+      <EntityTypeMapping TypeName="NhanSuModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -97,7 +96,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TangLuongs">
+    <EntitySetMapping Name="TangLuong">
       <EntityTypeMapping TypeName="NhanSuModel.TangLuong">
         <MappingFragment StoreEntitySet="TangLuong">
           <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
@@ -133,6 +132,7 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -160,6 +160,7 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

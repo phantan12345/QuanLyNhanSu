@@ -57,5 +57,10 @@ namespace QuanLyNhanSu
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!");
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

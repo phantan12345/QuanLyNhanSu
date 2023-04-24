@@ -1,4 +1,5 @@
 ﻿using QuanLyNhanSu.BUS_Admin;
+using QuanLyNhanSu.DAO_ADMIN;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,16 +23,20 @@ namespace QuanLyNhanSu
 
         public void load()
         {
+           
             dg_phongban.DataSource = null;
             ds.getPhongBan(dg_phongban);
+            dg_phongban.Columns[0].Width = (int)(dg_phongban.Width * 0.25);
+            dg_phongban.Columns[1].Width = (int)(dg_phongban.Width * 0.25);
+            dg_phongban.Columns[2].Width = (int)(dg_phongban.Width * 0.25);
+            dg_phongban.Columns[3].Width = (int)(dg_phongban.Width * 0.25);
         }
 
 
 
         private void Department_Load(object sender, EventArgs e)
         {
-            dg_phongban.DataSource = null;
-            ds.getPhongBan(dg_phongban);
+            load();
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -45,6 +50,7 @@ namespace QuanLyNhanSu
 
             ds.addPhongBan(p);
             load();
+            clear();
         }
 
 
@@ -98,13 +104,7 @@ namespace QuanLyNhanSu
 
         }
 
-        private void dg_phongban_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = dg_phongban.CurrentCell.RowIndex;
-            txt_tenphongban.Text = dg_phongban.Rows[index].Cells[1].Value.ToString(); ;
-            dt_ngaythanhlap.Value = Convert.ToDateTime(dg_phongban.Rows[index].Cells[2].Value.ToString());
-            txt_ghichu.Text = dg_phongban.Rows[index].Cells[3].Value.ToString(); ;
-        }
+       
 
         private void btn_new_Click(object sender, EventArgs e)
         {
@@ -115,6 +115,21 @@ namespace QuanLyNhanSu
                     ctr.Text = "";
                 }
             }
+        }
+
+        private void dg_phongban_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dg_phongban.CurrentCell.RowIndex;
+            txt_tenphongban.Text = dg_phongban.Rows[e.RowIndex].Cells["TenPhongBan"].Value.ToString(); ;
+            dt_ngaythanhlap.Value = Convert.ToDateTime(dg_phongban.Rows[e.RowIndex].Cells["NgayThanhLap"].Value.ToString());
+            txt_ghichu.Text = dg_phongban.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
+        }
+
+        public void clear()
+        {
+            txt_maphongban.Text = "";
+            txt_tenphongban.Text = "";
+            txt_ghichu.Text = "";
         }
     }
 

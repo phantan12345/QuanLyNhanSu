@@ -39,6 +39,13 @@ namespace QuanLyNhanSu
         {
             gvNhanVien.DataSource = null;
             busNhanVien.LayDSNV(gvNhanVien);
+            gvNhanVien.Columns[0].Width = (int)(gvNhanVien.Width*0.2);
+            gvNhanVien.Columns[1].Width = (int)(gvNhanVien.Width * 0.2);
+            gvNhanVien.Columns[2].Width = (int)(gvNhanVien.Width * 0.2);
+            gvNhanVien.Columns[3].Width = (int)(gvNhanVien.Width * 0.2); 
+            gvNhanVien.Columns[4].Width = (int)(gvNhanVien.Width * 0.2);
+
+
 
         }
         private void btn_Them_Click(object sender, EventArgs e)

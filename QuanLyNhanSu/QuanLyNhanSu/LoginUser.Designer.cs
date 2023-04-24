@@ -166,9 +166,10 @@
             this.label3.Location = new System.Drawing.Point(179, 52);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(508, 31);
+            this.label3.Size = new System.Drawing.Size(504, 31);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Đăng nhập hệ thống Quản lý sinh viên";
+            this.label3.Text = "Đăng nhập hệ thống Quản lý Nhân Sự";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // LoginUser
             // 

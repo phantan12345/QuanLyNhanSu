@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace QuanLyNhanSu.DAO
 {
@@ -36,9 +36,14 @@ namespace QuanLyNhanSu.DAO
                           nv.NgayKy,
                           nv.GioiTinh
                       }
-                      ).Where(s => s.MaNV == id).ToList();
+                      ).Where(s => s.MaNV.Contains(id)).ToList();
+
+
 
             var firstUser = user.FirstOrDefault();
+            //string n = firstUser.username.ToString();
+            //MessageBox.Show(n);
+
             return firstUser;
         }
 

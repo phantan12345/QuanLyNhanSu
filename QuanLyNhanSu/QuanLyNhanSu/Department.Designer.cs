@@ -264,7 +264,7 @@
             this.dg_phongban.RowHeadersWidth = 51;
             this.dg_phongban.Size = new System.Drawing.Size(965, 334);
             this.dg_phongban.TabIndex = 2;
-            this.dg_phongban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_phongban_CellContentClick);
+            this.dg_phongban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_phongban_CellClick);
             // 
             // Department
             // 
