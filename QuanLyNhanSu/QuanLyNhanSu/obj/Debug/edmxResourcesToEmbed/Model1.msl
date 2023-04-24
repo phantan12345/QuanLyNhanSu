@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities1">
+  <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities">
     <EntitySetMapping Name="BangCongs">
       <EntityTypeMapping TypeName="NhanSuModel.BangCong">
         <MappingFragment StoreEntitySet="BangCong">
@@ -18,7 +18,6 @@
     <EntitySetMapping Name="BangLuongs">
       <EntityTypeMapping TypeName="NhanSuModel.BangLuong">
         <MappingFragment StoreEntitySet="BangLuong">
-          <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
           <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
           <ScalarProperty Name="PCPhongBan" ColumnName="PCPhongBan" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
@@ -32,6 +31,7 @@
           <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
           <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
           <ScalarProperty Name="LuongTotal" ColumnName="LuongTotal" />
+          <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -44,13 +44,13 @@
           <ScalarProperty Name="NamDong" ColumnName="NamDong" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
           <ScalarProperty Name="TiLe" ColumnName="TiLe" />
+          <ScalarProperty Name="TienBH" ColumnName="TienBH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NhanViens">
       <EntityTypeMapping TypeName="NhanSuModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
-          <ScalarProperty Name="LCB" ColumnName="LCB" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
@@ -59,7 +59,6 @@
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
           <ScalarProperty Name="CCCD" ColumnName="CCCD" />
-          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
           <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
           <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
           <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
@@ -72,6 +71,9 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="HocVan" ColumnName="HocVan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -120,7 +122,6 @@
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
           <ScalarProperty Name="CCCD" ColumnName="CCCD" />
-          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
           <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
           <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
           <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
@@ -133,6 +134,9 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="HocVan" ColumnName="HocVan" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -147,7 +151,6 @@
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
           <ScalarProperty Name="CCCD" ColumnName="CCCD" />
-          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
           <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
           <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
           <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
@@ -160,6 +163,9 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="LCB" ColumnName="LCB" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="HocVan" ColumnName="HocVan" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

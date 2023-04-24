@@ -20,6 +20,7 @@ namespace QuanLyNhanSu
         public Nullable<int> NamDong { get; set; }
         public string GhiChu { get; set; }
         public Nullable<double> TiLe { get; set; }
+        public string TienBH { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }
     }

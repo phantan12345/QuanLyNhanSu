@@ -26,29 +26,84 @@ namespace QuanLyNhanSu.BUS_Admin
             if (thang == "" && nam == "")
             {
                 dg.DataSource = dLuong.TimDSBL(ma);
+                return;
             }
-            else
-             if (thang == "")
+            if (thang == "" && ma=="")
             {
-                dg.DataSource = dLuong.TimDSBL(ma, 0, int.Parse(nam));
+                dg.DataSource = dLuong.TimDSBL(ma,int.Parse(nam));
+                return;
             }
-            else if (nam == "")
-            {
-                dg.DataSource = dLuong.TimDSBL(ma, int.Parse(thang), 0);
-            }
-            else if (ma == "" && thang == "")
-            {
-                dg.DataSource = dLuong.TimDSBL(ma, int.Parse(nam));
-            }
-            else if (ma == "" && nam == "")
+            if (nam == ""&& ma=="")
             {
                 dg.DataSource = dLuong.TimDSBL(int.Parse(thang));
+                return;
             }
-            else
+            if (thang == "")
+            {
+                dg.DataSource = dLuong.TimDSBL(ma,0, int.Parse(nam));
+                return;
+            }
+            if (nam == "")
+            {
+                dg.DataSource = dLuong.TimDSBL(ma,int.Parse(thang),0);
+                return;
+            }
+            if(ma=="")
             {
                 dg.DataSource = dLuong.TimDSBL(ma, int.Parse(thang), int.Parse(nam));
             }
+            dg.DataSource = dLuong.TimDSBL(ma, int.Parse(thang), int.Parse(nam));
         }
 
+        public BangLuong LayBL(String ma,int thang,int nam)
+        {
+            return dLuong.LayBL(ma, thang, nam);
+        }
+        public NhanVien LayNV(String ma)
+        {
+            return dLuong.LayNV(ma);
+        }
+
+        public Boolean TinhLuong(String ma,int thang,int nam)
+        {
+            if (LayBL(ma, thang, nam) != null)
+            {
+                MessageBox.Show("Đã tính lương cho" + ma);
+                return false;
+            }
+            try 
+            {
+                dLuong.TinhLuong(ma, thang, nam);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hệ thống lỗi");
+                return false;
+            }
+            return true;
+        }
+
+        public void TaoBH(BaoHiem bh)
+        {
+            dLuong.TaoBH(bh);
+        }
+
+        public List<string> LayDSMaNV()
+        {
+            return dLuong.LayDSMaNV();
+        }
+        public void loadTxtLuongCu(TextBox lc,String ma)
+        {
+            lc.Text =dLuong.LayNV(ma).LCB.ToString();
+        }
+        public void ThemTangLuong(TangLuong tl)
+        {
+            dLuong.ThemTangLuong(tl);
+        }
+        public void HienThiDSTangLuong(DataGridView dg,String ma)
+        {
+            dg.DataSource = dLuong.LayDSTangLuong(ma);
+        }
     }
+        
 }

@@ -58,11 +58,11 @@ namespace QuanLyNhanSu.DAO_ADMIN
             NhanVien n = db.NhanViens.SingleOrDefault(nvc => nvc.CCCD == nv.CCCD);
             n.HoTen = nv.HoTen;
             n.NgaySinh = nv.NgaySinh;
-            //n.NoiSinh = nv.NoiSinh;
+            n.NoiSinh = nv.NoiSinh;
             n.email = nv.email;
             n.ChucVu = nv.ChucVu;
             n.SoDienThoai = nv.SoDienThoai;
-            //n.HocVan = nv.HocVan;
+            n.HocVan = nv.HocVan;
             n.GioiTinh = nv.GioiTinh;
             n.MaPhong = nv.MaPhong;
             db.SaveChanges();

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="NhanSuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BangCong">
           <Key>
             <PropertyRef Name="MaBangCong" />
@@ -47,6 +47,7 @@
           <Property Name="NamDong" Type="int" />
           <Property Name="GhiChu" Type="nvarchar(max)" />
           <Property Name="TiLe" Type="float" />
+          <Property Name="TienBH" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -60,7 +61,6 @@
           <Property Name="GioiTinh" Type="bit" />
           <Property Name="TTHonNhan" Type="bit" />
           <Property Name="CCCD" Type="char" MaxLength="10" />
-          <Property Name="NoiCap" Type="nvarchar" MaxLength="50" />
           <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
           <Property Name="LoaiHD" Type="nvarchar" MaxLength="50" />
           <Property Name="ThoiGian" Type="int" />
@@ -74,6 +74,8 @@
           <Property Name="active" Type="bit" />
           <Property Name="email" Type="nvarchar" MaxLength="50" />
           <Property Name="LCB" Type="float" />
+          <Property Name="NoiSinh" Type="varchar" MaxLength="50" />
+          <Property Name="HocVan" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="PhongBan">
           <Key>
@@ -235,7 +237,8 @@
             <End Role="TangLuong" EntitySet="TangLuong" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NhanSuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -270,8 +273,8 @@
           <Property Name="KyLuat" Type="Double" />
           <Property Name="SoGioTangCa" Type="Int32" />
           <Property Name="LuongTotal" Type="Double" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
           <Property Name="BaoHiem" Type="Double" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="BaoHiem">
           <Key>
@@ -283,6 +286,7 @@
           <Property Name="NamDong" Type="Int32" />
           <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TiLe" Type="Double" />
+          <Property Name="TienBH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="BaoHiem" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="NhanVien">
@@ -297,7 +301,6 @@
           <Property Name="GioiTinh" Type="Boolean" />
           <Property Name="TTHonNhan" Type="Boolean" />
           <Property Name="CCCD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="NoiCap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LoaiHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ThoiGian" Type="Int32" />
@@ -310,12 +313,14 @@
           <Property Name="role" Type="Boolean" />
           <Property Name="active" Type="Boolean" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LCB" Type="Double" />
+          <Property Name="NoiSinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HocVan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="BangCongs" Relationship="Self.FK_BangCong_NhanVien" FromRole="NhanVien" ToRole="BangCong" />
           <NavigationProperty Name="BangLuongs" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="NhanVien" ToRole="BangLuong" />
           <NavigationProperty Name="BaoHiems" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="NhanVien" ToRole="BaoHiem" />
           <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan" FromRole="NhanVien" ToRole="PhongBan" />
           <NavigationProperty Name="TangLuongs" Relationship="Self.FK_TangLuong_NhanVien" FromRole="NhanVien" ToRole="TangLuong" />
-          <Property Name="LCB" Type="Double" />
         </EntityType>
         <EntityType Name="PhongBan">
           <Key>
@@ -410,7 +415,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NhanSuEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NhanSuEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BangCongs" EntityType="Self.BangCong" />
           <EntitySet Name="BangLuongs" EntityType="Self.BangLuong" />
           <EntitySet Name="BaoHiems" EntityType="Self.BaoHiem" />
@@ -487,7 +492,6 @@
           <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
           <Property Type="Boolean" Name="TTHonNhan" Nullable="true" />
           <Property Type="String" Name="CCCD" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="NoiCap" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ChucVu" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="LoaiHD" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="ThoiGian" Nullable="true" />
@@ -500,6 +504,9 @@
           <Property Type="Boolean" Name="role" Nullable="true" />
           <Property Type="Boolean" Name="active" Nullable="true" />
           <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="LCB" Nullable="true" />
+          <Property Type="String" Name="NoiSinh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="HocVan" Nullable="true" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="proc_login_Result">
           <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
@@ -510,7 +517,6 @@
           <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
           <Property Type="Boolean" Name="TTHonNhan" Nullable="true" />
           <Property Type="String" Name="CCCD" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="NoiCap" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ChucVu" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="LoaiHD" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="ThoiGian" Nullable="true" />
@@ -523,6 +529,9 @@
           <Property Type="Boolean" Name="role" Nullable="true" />
           <Property Type="Boolean" Name="active" Nullable="true" />
           <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="LCB" Nullable="true" />
+          <Property Type="String" Name="NoiSinh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="HocVan" Nullable="true" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -540,7 +549,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities1">
+        <EntityContainerMapping StorageEntityContainer="NhanSuModelStoreContainer" CdmEntityContainer="NhanSuEntities">
           <EntitySetMapping Name="BangCongs">
             <EntityTypeMapping TypeName="NhanSuModel.BangCong">
               <MappingFragment StoreEntitySet="BangCong">
@@ -558,7 +567,6 @@
           <EntitySetMapping Name="BangLuongs">
             <EntityTypeMapping TypeName="NhanSuModel.BangLuong">
               <MappingFragment StoreEntitySet="BangLuong">
-                <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
                 <ScalarProperty Name="MaLuong" ColumnName="MaLuong" />
                 <ScalarProperty Name="PCPhongBan" ColumnName="PCPhongBan" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
@@ -572,6 +580,7 @@
                 <ScalarProperty Name="KyLuat" ColumnName="KyLuat" />
                 <ScalarProperty Name="SoGioTangCa" ColumnName="SoGioTangCa" />
                 <ScalarProperty Name="LuongTotal" ColumnName="LuongTotal" />
+                <ScalarProperty Name="BaoHiem" ColumnName="BaoHiem" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -584,13 +593,13 @@
                 <ScalarProperty Name="NamDong" ColumnName="NamDong" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="TiLe" ColumnName="TiLe" />
+                <ScalarProperty Name="TienBH" ColumnName="TienBH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="NhanSuModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
-                <ScalarProperty Name="LCB" ColumnName="LCB" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="MaBoPhan" ColumnName="MaBoPhan" />
@@ -599,7 +608,6 @@
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
                 <ScalarProperty Name="CCCD" ColumnName="CCCD" />
-                <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
                 <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
                 <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
                 <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
@@ -612,6 +620,9 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
+                <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+                <ScalarProperty Name="HocVan" ColumnName="HocVan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -660,7 +671,6 @@
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
                 <ScalarProperty Name="CCCD" ColumnName="CCCD" />
-                <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
                 <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
                 <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
                 <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
@@ -673,6 +683,9 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
+                <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+                <ScalarProperty Name="HocVan" ColumnName="HocVan" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -687,7 +700,6 @@
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="TTHonNhan" ColumnName="TTHonNhan" />
                 <ScalarProperty Name="CCCD" ColumnName="CCCD" />
-                <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
                 <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
                 <ScalarProperty Name="LoaiHD" ColumnName="LoaiHD" />
                 <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
@@ -700,6 +712,9 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="LCB" ColumnName="LCB" />
+                <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+                <ScalarProperty Name="HocVan" ColumnName="HocVan" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

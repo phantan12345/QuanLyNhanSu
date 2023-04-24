@@ -18,7 +18,7 @@ namespace QuanLyNhanSu
     public partial class NhanSuEntities1 : DbContext
     {
         public NhanSuEntities1()
-            : base("name=NhanSuEntities1")
+            : base("name=NhanSuEntities")
         {
         }
     

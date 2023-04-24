@@ -42,6 +42,7 @@
     <Property Name="NamDong" Type="int" />
     <Property Name="GhiChu" Type="nvarchar(max)" />
     <Property Name="TiLe" Type="float" />
+    <Property Name="TienBH" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
@@ -55,7 +56,6 @@
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="TTHonNhan" Type="bit" />
     <Property Name="CCCD" Type="char" MaxLength="10" />
-    <Property Name="NoiCap" Type="nvarchar" MaxLength="50" />
     <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
     <Property Name="LoaiHD" Type="nvarchar" MaxLength="50" />
     <Property Name="ThoiGian" Type="int" />
@@ -69,6 +69,8 @@
     <Property Name="active" Type="bit" />
     <Property Name="email" Type="nvarchar" MaxLength="50" />
     <Property Name="LCB" Type="float" />
+    <Property Name="NoiSinh" Type="varchar" MaxLength="50" />
+    <Property Name="HocVan" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PhongBan">
     <Key>

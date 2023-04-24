@@ -31,8 +31,8 @@
     <Property Name="KyLuat" Type="Double" />
     <Property Name="SoGioTangCa" Type="Int32" />
     <Property Name="LuongTotal" Type="Double" />
-    <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
     <Property Name="BaoHiem" Type="Double" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="BangLuong" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="BaoHiem">
     <Key>
@@ -44,6 +44,7 @@
     <Property Name="NamDong" Type="Int32" />
     <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="TiLe" Type="Double" />
+    <Property Name="TienBH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="NhanVien" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="BaoHiem" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="NhanVien">
@@ -58,7 +59,6 @@
     <Property Name="GioiTinh" Type="Boolean" />
     <Property Name="TTHonNhan" Type="Boolean" />
     <Property Name="CCCD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="NoiCap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="LoaiHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ThoiGian" Type="Int32" />
@@ -71,12 +71,14 @@
     <Property Name="role" Type="Boolean" />
     <Property Name="active" Type="Boolean" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LCB" Type="Double" />
+    <Property Name="NoiSinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HocVan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="BangCongs" Relationship="Self.FK_BangCong_NhanVien" FromRole="NhanVien" ToRole="BangCong" />
     <NavigationProperty Name="BangLuongs" Relationship="Self.FK_BangLuong_NhanVien1" FromRole="NhanVien" ToRole="BangLuong" />
     <NavigationProperty Name="BaoHiems" Relationship="Self.FK_BaoHiem_NhanVien" FromRole="NhanVien" ToRole="BaoHiem" />
     <NavigationProperty Name="PhongBan" Relationship="Self.FK_NhanVien_PhongBan" FromRole="NhanVien" ToRole="PhongBan" />
     <NavigationProperty Name="TangLuongs" Relationship="Self.FK_TangLuong_NhanVien" FromRole="NhanVien" ToRole="TangLuong" />
-    <Property Name="LCB" Type="Double" />
   </EntityType>
   <EntityType Name="PhongBan">
     <Key>
@@ -171,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="NhanSuEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="NhanSuEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BangCongs" EntityType="Self.BangCong" />
     <EntitySet Name="BangLuongs" EntityType="Self.BangLuong" />
     <EntitySet Name="BaoHiems" EntityType="Self.BaoHiem" />
@@ -248,7 +250,6 @@
     <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
     <Property Type="Boolean" Name="TTHonNhan" Nullable="true" />
     <Property Type="String" Name="CCCD" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="NoiCap" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="ChucVu" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="LoaiHD" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="ThoiGian" Nullable="true" />
@@ -261,6 +262,9 @@
     <Property Type="Boolean" Name="role" Nullable="true" />
     <Property Type="Boolean" Name="active" Nullable="true" />
     <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="LCB" Nullable="true" />
+    <Property Type="String" Name="NoiSinh" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HocVan" Nullable="true" MaxLength="50" />
   </ComplexType>
   <ComplexType Name="proc_login_Result">
     <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
@@ -271,7 +275,6 @@
     <Property Type="Boolean" Name="GioiTinh" Nullable="true" />
     <Property Type="Boolean" Name="TTHonNhan" Nullable="true" />
     <Property Type="String" Name="CCCD" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="NoiCap" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="ChucVu" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="LoaiHD" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="ThoiGian" Nullable="true" />
@@ -284,6 +287,9 @@
     <Property Type="Boolean" Name="role" Nullable="true" />
     <Property Type="Boolean" Name="active" Nullable="true" />
     <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="LCB" Nullable="true" />
+    <Property Type="String" Name="NoiSinh" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HocVan" Nullable="true" MaxLength="50" />
   </ComplexType>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />

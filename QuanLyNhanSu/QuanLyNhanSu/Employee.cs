@@ -47,13 +47,13 @@ namespace QuanLyNhanSu
             nv.MaNV = Guid.NewGuid().ToString().Substring(0, 10);
             nv.HoTen = txtTen.Text;
             nv.NgaySinh = tpNgaySinh.Value;
-            //nv.NoiSinh = txtNoiSinh.Text;
+            nv.NoiSinh = txtNoiSinh.Text;
             nv.email = txtEmail.Text;
             nv.CCCD = txtCCCD.Text;
             nv.ChucVu = txtChucVu.Text;
             nv.SoDienThoai = txtSDT.Text;
-            //nv.HocVan = txtHocVan.Text;
-            //nv.GioiTinh = cbGioiTinh.SelectedItem.ToString();
+            nv.HocVan = txtHocVan.Text;
+            nv.GioiTinh = cbGioiTinh.SelectedIndex==1?true:false;
             nv.MaBoPhan = cbPhongBan.SelectedValue.ToString();
             if (busNhanVien.ThemNV(nv))
             {
@@ -71,13 +71,13 @@ namespace QuanLyNhanSu
             nv.MaNV = Guid.NewGuid().ToString().Substring(0, 10);
             nv.HoTen = txtTen.Text;
             nv.NgaySinh = tpNgaySinh.Value;
-            //nv.NoiSinh = txtNoiSinh.Text;
+            nv.NoiSinh = txtNoiSinh.Text;
             nv.email = txtEmail.Text;
             nv.CCCD = txtCCCD.Text;
             nv.ChucVu = txtChucVu.Text;
             nv.SoDienThoai = txtSDT.Text;
-            //nv.HocVan = txtHocVan.Text;
-            //nv.GioiTinh = cbGioiTinh.SelectedItem.ToString();
+            nv.HocVan = txtHocVan.Text;
+            nv.GioiTinh = cbGioiTinh.SelectedIndex == 1 ? true : false;
             nv.MaPhong = cbPhongBan.SelectedValue.ToString();
 
             if (busNhanVien.KiemTraNV(txtCCCD.Text) && busNhanVien.SuaNV(nv))
@@ -110,14 +110,14 @@ namespace QuanLyNhanSu
                 txtCCCD.Text = nv.CCCD;
                 //txtNoiSinh.Text = nv.NoiSinh;
                 //txtHocVan.Text = nv.HocVan;
-                //int index = cbGioiTinh.FindStringExact(nv.GioiTinh);
-                //cbGioiTinh.SelectedIndex = index;
-                //if (nv.MaPhong != null)
-                //{
-                //    String name = busNhanVien.TenPB(nv.MaPhong);
-                //    int indexs = cbPhongBan.FindStringExact(name);
-                //    cbPhongBan.SelectedIndex = indexs;
-                //}
+                
+                cbGioiTinh.SelectedIndex = nv.GioiTinh==true?1:0;
+                if (nv.MaPhong != null)
+                {
+                    String name = busNhanVien.TenPB(nv.MaPhong);
+                    int indexs = cbPhongBan.FindStringExact(name);
+                    cbPhongBan.SelectedIndex = indexs;
+                }
             }
         }
         private void clear()

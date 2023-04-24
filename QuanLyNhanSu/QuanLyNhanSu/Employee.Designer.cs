@@ -30,7 +30,6 @@ namespace QuanLyNhanSu
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
@@ -49,7 +48,7 @@ namespace QuanLyNhanSu
             this.gvNhanVien = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_Them = new System.Windows.Forms.Button();
+            this.tbn = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -215,7 +214,7 @@ namespace QuanLyNhanSu
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.btn_Them);
+            this.groupBox3.Controls.Add(this.tbn);
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
@@ -227,28 +226,26 @@ namespace QuanLyNhanSu
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Các chức năng";
             // 
-            // btn_Them
+            // tbn
             // 
-            this.btn_Them.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Them.BackgroundImage")));
-            this.btn_Them.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Them.FlatAppearance.BorderSize = 0;
-            this.btn_Them.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_Them.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Them.Image = global::QuanLyNhanSu.Properties.Resources.upload;
-            this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_Them.Location = new System.Drawing.Point(0, 24);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(76, 33);
-            this.btn_Them.TabIndex = 1;
-            this.btn_Them.Text = "Them";
-            this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Them.UseVisualStyleBackColor = true;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            this.tbn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tbn.FlatAppearance.BorderSize = 0;
+            this.tbn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.tbn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.tbn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbn.Image = global::QuanLyNhanSu.Properties.Resources.upload;
+            this.tbn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.tbn.Location = new System.Drawing.Point(0, 24);
+            this.tbn.Name = "tbn";
+            this.tbn.Size = new System.Drawing.Size(76, 33);
+            this.tbn.TabIndex = 1;
+            this.tbn.Text = "Them";
+            this.tbn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbn.UseVisualStyleBackColor = true;
+            this.tbn.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btnClear
             // 
-            this.btnClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClear.BackgroundImage")));
             this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -267,7 +264,6 @@ namespace QuanLyNhanSu
             // 
             // btnXoa
             // 
-            this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
             this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -286,7 +282,6 @@ namespace QuanLyNhanSu
             // 
             // btnSua
             // 
-            this.btnSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSua.BackgroundImage")));
             this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -446,7 +441,7 @@ namespace QuanLyNhanSu
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Button tbn;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel panel_ThongTin;

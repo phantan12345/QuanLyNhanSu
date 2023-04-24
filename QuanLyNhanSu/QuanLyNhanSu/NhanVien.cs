@@ -31,7 +31,6 @@ namespace QuanLyNhanSu
         public Nullable<bool> GioiTinh { get; set; }
         public Nullable<bool> TTHonNhan { get; set; }
         public string CCCD { get; set; }
-        public string NoiCap { get; set; }
         public string ChucVu { get; set; }
         public string LoaiHD { get; set; }
         public Nullable<int> ThoiGian { get; set; }
@@ -45,6 +44,8 @@ namespace QuanLyNhanSu
         public Nullable<bool> active { get; set; }
         public string email { get; set; }
         public Nullable<double> LCB { get; set; }
+        public string NoiSinh { get; set; }
+        public string HocVan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BangCong> BangCongs { get; set; }
